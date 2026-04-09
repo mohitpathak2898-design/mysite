@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title>Photo Gallery</title>
+    <style>
+        /* Header Styling */
+        header {
+            width: 50%;
+            background: black;
+            color: white;
+            font-size: 50px;
+            box-shadow: 10px 10px 10px gray;
+            font-family: "Arial Black", sans-serif;
+            text-align: center;
+            padding: 10px;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Main Container Setup */
+        main {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Image Styling */
+        .picstyle {
+            width: 250px;   /* Size thoda bada kiya hai taaki clear dikhe */
+            height: 250px;
+            margin: 30px;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+            border-radius: 15px; /* Halte se curved corners, circle nahi banega */
+            transition: transform 0.4s ease, box-shadow 0.4s ease; /* Smooth zoom animation */
+            
+            /* Main Fix: Isse image stretch ya square type ki khinchi hui nahi dikhegi */
+            object-fit: cover; 
+            cursor: pointer;
+        }
+
+        /* ZOOM IN Effect: Mouse upar le jaane par */
+        .picstyle:hover {
+            transform: scale(1.15); /* Photo thodi badi hogi */
+            box-shadow: 0px 15px 30px rgba(0,0,0,0.5); /* Shadow bhi deep hogi */
+            z-index: 10; /* Zoom hone par photo upar dikhegi */
+        }
+
+        /* Click hone par zoom effect maintain rahega */
+        .picstyle:active {
+            transform: scale(1.05); /* Click karne par halka sa dabega (button feel) */
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>WEB PHOTO GALLERY</header>
+
+<main>
+    <a href="p1.html"><img src="Images/p1.jpg" class="picstyle"></a>
+    <a href="p2.html"><img src="Images/p2.jpg" class="picstyle"></a>
+    <a href="p3.html"><img src="Images/p3.jpg" class="picstyle"></a>
+    <a href="p4.html"><img src="Images/p4.jpg" class="picstyle"></a>
+    <a href="p5.html"><img src="Images/p5.jpg" class="picstyle"></a>
+    <a href="p6.html"><img src="Images/p6.jpg" class="picstyle"></a>
+    <a href="p7.html"><img src="Images/p7.jpg" class="picstyle"></a>
+    <a href="p8.html"><img src="Images/p8.jpg" class="picstyle"></a>
+</main>
+
+<footer></footer>
+
+</body>
+</html>

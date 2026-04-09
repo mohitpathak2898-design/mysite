@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+    <title>Photo View - Perfect Balance</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Shuddh Safed Background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        /* Back Arrow - Bilkul simple aur clean */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: black;
+            text-decoration: none;
+            font-size: 45px;
+            z-index: 1000;
+            line-height: 1;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.2);
+        }
+
+        /* Wrapper */
+        .img-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* --- BALANCED IMAGE SIZE --- */
+        .big-pic {
+            /* Ab ye 85% width lega, jo ki 'Badi' aur 'Bahut Badi' ke beech ka size hai */
+            width: 85%; 
+            max-height: 88vh; /* Height ko thoda control kiya taaki scrolling na aaye */
+            
+            height: auto;
+            display: block;
+            border: none;
+            box-shadow: none;
+            
+            /* Zoom Animation */
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            cursor: zoom-in;
+            object-fit: contain;
+        }
+
+        /* Zoom Effect */
+        .big-pic:hover {
+            transform: scale(1.08); /* Halka aur premium zoom */
+            cursor: zoom-out;
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .big-pic {
+                width: 92%; /* Mobile par thoda bada rakha hai */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" class="back-btn" onclick="history.back(); return false;">&#10229;</a>
+
+    <div class="img-wrapper">
+        <img src="Images/p6.jpg" class="big-pic" alt="Balanced View">
+    </div>
+
+</body>
+</html>

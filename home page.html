@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Homepage</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 5px solid #6c63ff;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    /* Typewriter */
+    .role {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 15px;
+      color: #6c63ff;
+      display: inline-block;
+      border-right: 3px solid #6c63ff;
+      padding-right: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      padding: 0 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .social-icons a {
+      text-decoration: none;
+    }
+
+    .social-box {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      background: #f1f1f1;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .social-box i {
+      font-size: 28px;
+    }
+
+    .social-box:hover {
+      transform: translateY(-8px) scale(1.1);
+    }
+
+    .linkedin { color: #0077b5; }
+    .github { color: #181717; }
+    .behance { color: #1769ff; }
+
+    @media (max-width: 600px) {
+      .profile-img {
+        width: 140px;
+        height: 140px;
+      }
+
+      h1 { font-size: 22px; }
+      .role { font-size: 14px; }
+      .social-box { width: 60px; height: 60px; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="images/p9.png" alt="My Photo" class="profile-img">
+
+    <h1>Mohit Pathak</h1>
+
+    <div class="role" id="roleText"></div>
+
+    <p>
+      Hello! My Name is Mohit.I am a passionate UI/UX design student at Arena Animation, focused on creating intuitive and visually engaging digital experiences. I enjoy transforming ideas into clean, functional designs that solve real user problems.
+
+I have hands-on experience with tools like Figma, Adobe Photoshop, and Adobe Illustrator, along with a basic understanding of HTML.
+    <div class="social-icons">
+      <a href="https://linkedin.com" target="_blank" class="social-box">
+        <i class="fab fa-linkedin linkedin"></i>
+      </a>
+      <a href="https://github.com" target="_blank" class="social-box">
+        <i class="fab fa-github github"></i>
+      </a>
+      <a href="https://behance.net" target="_blank" class="social-box">
+        <i class="fab fa-behance behance"></i>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    const roles = ["UI/UX Designer", "Graphic Designer"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const speed = 100;
+    const roleText = document.getElementById("roleText");
+
+    function typeEffect() {
+      const current = roles[roleIndex];
+
+      if (isDeleting) {
+        roleText.textContent = current.substring(0, charIndex--);
+      } else {
+        roleText.textContent = current.substring(0, charIndex++);
+      }
+
+      if (!isDeleting && charIndex === current.length) {
+        setTimeout(() => isDeleting = true, 1000);
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+      }
+
+      setTimeout(typeEffect, isDeleting ? 50 : speed);
+    }
+
+    typeEffect();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <title>Photo View - Forced Landscape Normal</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; /* Screen se bahar na nikalne de */
+            font-family: sans-serif;
+        }
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: black;
+            text-decoration: none;
+            font-size: 45px;
+            z-index: 1000;
+            line-height: 1;
+            transition: transform 0.2s;
+        }
+
+        .back-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px; /* Thodi safe jagah charo taraf */
+            box-sizing: border-box;
+        }
+
+        /* --- CONTROLLED LANDSCAPE IMAGE --- */
+        .big-pic {
+            /* Chaudai control mein */
+            width: 80%; 
+            /* Lambai control mein, taaki zoom par bahar na jaye */
+            max-height: 80vh; 
+            
+            /* Zabardasti wide look */
+            aspect-ratio: 16 / 9; 
+            
+            border: none;
+            display: block;
+            object-fit: cover; /* Photo pichkegi nahi */
+            
+            /* Smooth Animation */
+            transition: transform 0.4s ease-in-out;
+            cursor: zoom-in;
+        }
+
+        /* --- HOVER PAR AB YE NORMAL ZOOM HOGI --- */
+        .big-pic:hover {
+            /* 1.1 ko kam karke 1.05 kiya hai */
+            transform: scale(1.05); 
+            cursor: zoom-out;
+        }
+
+        /* Mobile ke liye */
+        @media (max-width: 768px) {
+            .big-pic {
+                width: 95%;
+                aspect-ratio: 4 / 3; /* Mobile par thoda kam wide */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" class="back-btn" onclick="history.back(); return false;">&#10229;</a>
+
+    <div class="img-wrapper">
+        <img src="Images/p7.jpg" class="big-pic" alt="Landscape View">
+    </div>
+
+</body>
+</html>

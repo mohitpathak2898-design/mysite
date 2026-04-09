@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohit Pathak - Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #f5f5f5);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: #111;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: #00bcd4; }
+
+        
+        .profile {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #00bcd4;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            max-width: 100%;
+            cursor: pointer;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1) rotate(5deg);
+            border-color: #e91e63;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .profile h1 {
+            margin-top: 15px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .typing-wrapper {
+            position: relative;
+            height: 40px; 
+            font-size: 1.2rem; 
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            pointer-events: none;
+        }
+
+        .text {
+            position: absolute;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            text-align: center;
+            border-right: 3px solid; 
+        }
+
+        .text1 { color: #007bff; animation: typing1 8s steps(20) infinite, blink 0.8s infinite; }
+        .text2 { color: #e91e63; animation: typing2 8s steps(20) infinite, blink 0.8s infinite; }
+
+        @keyframes typing1 { 0%, 10% { width: 0; opacity: 1; } 40%, 45% { width: 160px; opacity: 1; } 50%, 100% { width: 0; opacity: 0; } }
+        @keyframes typing2 { 0%, 50% { width: 0; opacity: 0; } 60% { width: 0; opacity: 1; } 90%, 95% { width: 180px; opacity: 1; } 100% { width: 0; opacity: 1; } }
+        @keyframes blink { 0%, 100% { border-color: transparent; } 50% { border-color: inherit; } }
+
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+            flex-grow: 1; 
+        }
+
+        .card-link { text-decoration: none; color: inherit; }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease-in-out;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); background: #00bcd4; color: #fff; }
+
+        
+        footer {
+            background: #111;
+            color: #fff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .social-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 24px;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        
+        .social-links a:hover { transform: translateY(-5px); }
+        .fa-behance:hover { color: #0057ff; }
+        .fa-github:hover { color: #6e5494; }
+        .fa-whatsapp:hover { color: #25d366; }
+        .fa-linkedin:hover { color: #0077b5; }
+
+        .copyright {
+            font-size: 14px;
+            opacity: 0.7;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            margin-top: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .navbar { flex-direction: column; padding: 10px; }
+            .nav-links { margin-top: 10px; gap: 10px; justify-content: center; }
+            .cards { grid-template-columns: 1fr; padding: 20px; }
+        }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">MyProfile</div>
+        <div class="nav-links">
+            <a href="Home Page.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="All Practice Work.html">Practice</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <div class="profile">
+        <img src="images/p9.png" alt="Mohit Pathak Profile">
+        <h1>Mohit Pathak</h1>
+        <div class="typing-wrapper">
+            <div class="text text1">UI/UX Designer</div>
+            <div class="text text2">Graphic Designer</div>
+        </div>
+    </div>
+
+    <div class="cards">
+        <a href="home page.html" class="card-link"><div class="card">Home</div></a>
+        <a href="projects.html" class="card-link"><div class="card">Projects</div></a>
+        <a href="all practice work.html" class="card-link"><div class="card">Practice</div></a>
+        <a href="contact.html" class="card-link"><div class="card">Contact</div></a>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Mohit Pathak</h3>
+            <div class="social-links">
+                <a href="https://www.behance.net/mohitpathak16" title="Behance"><i class="fab fa-behance"></i></a>
+                <a href="https://github.com/mohitpathak2898-design/Profile" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://web.whatsapp.com/" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.linkedin.com/in/mohit-pathak-3bbaa435b/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p class="copyright">All Rights Reserved &copy; 2026 | Designed by Mohit Pathak</p>
+        </div>
+    </footer>
+
+</body>
+</html>

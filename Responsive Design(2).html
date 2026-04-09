@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Responsive Profile</title>
+    <style>
+        /* General Styles */
+        div {
+            border: 1px black solid;
+            padding: 10px;
+        }
+
+        #col1 {
+            height: 100px;
+            width: 20%;
+            margin: 10px;
+            border-radius: 100px;
+        }
+
+        #col2 {
+            width: 60%;
+            height: 200px;
+            margin: 10px;
+        }
+
+        header {
+            border: 1px black solid;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .cardstyle {
+            width: 60%;
+            height: 180px;
+            box-shadow: 10px 10px 10px black;
+        }
+
+        .pic {
+            width: 100%;
+        }
+
+        /* Navigation Styles */
+        nav {
+            width: 90%;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        nav ol li {
+            list-style: none;
+            background: teal;
+            margin-left: -2px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 10px 10px 10px black;
+            transition: 0.50s;
+        }
+
+        nav ol li:hover {
+            background: white;
+            transform: scale(1.10);
+        }
+
+        /* Footer & Social Media Styling (From Images) */
+        footer {
+            background: red;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-top: 200px;
+            clear: both;
+        }
+
+        footer #info, #sitemap, #socialmedia {
+            width: 100%;
+            padding: 10px;
+        }
+
+        #sitemap ul li, #socialmedia ul li {
+            list-style: none;
+            text-align: left;
+            margin-left: 40%;
+        }
+
+        /* Link Styling */
+        a:link { color: yellow; text-decoration: none; }
+        a:visited { color: yellow; }
+        a:hover { text-decoration: underline; color: red; }
+        a:active { color: orange; }
+
+        /* Media Queries */
+        @media only screen and (max-width: 600px) {
+            body { background: green; }
+            #col2 { display: none; }
+            header { justify-content: center; }
+            .cardstyle { margin: 40px auto auto auto; }
+            nav ol li { display: block; }
+        }
+
+        @media only screen and (min-width: 600px) {
+            body { background: yellow; }
+            #col2 { width: 70%; }
+            #col1 { width: 100px; height: 40px; }
+            main { justify-content: center; }
+            .cardstyle { width: 40%; margin: 10px; }
+            nav ol li { display: inline; }
+        }
+
+        @media only screen and (min-width: 768px) {
+            body { background: pink; }
+            #col1 { width: 15%; height: 120px; }
+            #col2 { height: 200px; }
+            .cardstyle { width: 20%; margin: 10px; }
+        }
+
+        @media only screen and (min-width: 992px) {
+            body { background: red; }
+            #col2 { width: 90%; height: 400px; margin: auto; }
+            #col1 { display: show; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="col1">img src="Images/p9.png"> height="50px">
+         </div>
+
+        <div id="col2">img src="Images/cosmic.jpg
+         </div>
+    </header>
+
+    <nav>
+        <ol>
+            <li><a href="Mohit.html">Home</a></li>
+            <li><a href="Nike,html">Practice Work</a></li>
+            <li><a href="Photo Gallery.html">Project</a></li>
+            <li><a href="https://www.behance.net/mohitpathak16">Behance</a></li>
+        </ol>
+    </nav>
+
+    <main>
+       <div class="cardstyle" id="card1">
+<img src="Images/p1.jpg" class="pic" height="180px">
+</div>
+<div class="cardstyle" id="card2">
+<img src="Images/p2.jpg" class="pic" height="180px">
+</div>
+<div class="cardstyle" id="card3">
+<img src="Images/p3.jpg" class="pic" height="180px">
+</div>
+<div class="cardstyle" id="card4">
+<img src="Images/p4.jpg" class="pic" height="180px">
+</div>
+<div class="cardstyle" id="card5">
+<img src="Images/p5.jpg" class="pic" height="180px">
+</div>
+<div class="cardstyle" id="card6">
+<img src="Images/p6.jpg" class="pic" height="180px">
+</div>
+<div class="cardstyle" id="card7">
+<img src="Images/p7.jpg" class="pic" height="180px">
+</div>
+<div class="cardstyle" id="card8">
+<img src="Images/p8.jpg" class="pic" height="180px">
+    </main>
+
+    <footer>
+        <div id="info">
+            <h1>ALL Right Reserved <sup>&reg;</sup></h1>
+        </div>
+
+        <div id="sitemap">
+            <ul>
+                <li><a href="Mohit.html">Home</a></li>
+                <li><a href="Nike.html">Practice Work</a></li>
+                <li><a href="Photo Gallery.html">Project</a></li>
+                <li><a href="https://www.behance.net/mohitpathak16">Behance</a></li>
+            </ul>
+        </div>
+
+        <div id="socialmedia">
+            <details>
+                <summary>Social Media</summary>
+                <ul>
+                    <li><a href="http://Instagram.com">img src="image/Instagram.png."</a></li>
+                    <li><a href="http://Facebook.com">img src="image/Facebook.png."</a></li>
+                    <li><a href="http://Twitter.com"><img src="image/Twitter.png." style="width:50px;"></a></li>
+                    <li><a href="http://Youtube.com"><img src="image/You Tube.png." alt="YouTube" style="width:50px;"></a></li>
+                </ul>
+            </details>
+        </div>
+    </footer>
+
+</body>
+</html>

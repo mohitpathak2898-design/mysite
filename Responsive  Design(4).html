@@ -1,0 +1,125 @@
+<!dcotype html>
+<html>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<header>
+
+
+ 		<div id="col1">
+			profile pic
+		</div>
+ 		<div id="col2">
+			banner
+		</div>
+
+
+</header>
+<title>My Profile </title>
+<style>
+div
+{
+border:1px black solid;
+padding:10px;
+}
+
+#col1
+{
+height:100px;
+width:20%;
+margin:10px;
+}
+#col2
+{
+width:60%;
+height:200px;
+margin:10px;
+}
+
+
+header
+{
+border:1px black solid;
+//height:300px;
+display:flex;
+// flex-direction:column;
+flex-direction:row;
+//justify-content:end;
+//justify-content:start;
+//justify-content:center;end;
+justify-content:space-between;
+flex-wrap:wrap;
+
+
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px)
+ {
+
+ body{background:yellow;}
+#col2{display:none}
+header{justify-content:center;}
+
+}
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px)
+ {
+
+body{background:blue;}
+}
+
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px)
+ {
+  body{background:purple;}
+  #col1{width:10%;}
+#col2{height:100px}
+
+}
+
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) 
+{
+body{background:green;}
+#col2{height:300px}
+
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+<body>
+<main>
+
+</main>
+
+
+
+</body>
+<footer></footer>
+
+
+</html>
+
