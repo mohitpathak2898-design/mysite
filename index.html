@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +22,7 @@
             overflow-x: hidden;
         }
 
-        
+        /* Navbar */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -36,27 +35,12 @@
             z-index: 1000;
         }
 
-        .logo {
-            font-weight: bold;
-            font-size: 20px;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
+        .logo { font-weight: bold; font-size: 20px; letter-spacing: 1px; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 16px; transition: color 0.3s ease; }
         .nav-links a:hover { color: #00bcd4; }
 
-        
+        /* Profile Section */
         .profile {
             text-align: center;
             margin-top: 40px;
@@ -89,35 +73,15 @@
             color: #333;
         }
 
-        .typing-wrapper {
-            position: relative;
-            height: 40px; 
+        /* --- STATIC TEXT (No Blinking) --- */
+        .role-static {
             font-size: 1.2rem; 
             font-weight: bold;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             margin-top: 10px;
-            pointer-events: none;
+            color: #007bff; /* Aap color change bhi kar sakte hain */
         }
 
-        .text {
-            position: absolute;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            text-align: center;
-            border-right: 3px solid; 
-        }
-
-        .text1 { color: #007bff; animation: typing1 8s steps(20) infinite, blink 0.8s infinite; }
-        .text2 { color: #e91e63; animation: typing2 8s steps(20) infinite, blink 0.8s infinite; }
-
-        @keyframes typing1 { 0%, 10% { width: 0; opacity: 1; } 40%, 45% { width: 160px; opacity: 1; } 50%, 100% { width: 0; opacity: 0; } }
-        @keyframes typing2 { 0%, 50% { width: 0; opacity: 0; } 60% { width: 0; opacity: 1; } 90%, 95% { width: 180px; opacity: 1; } 100% { width: 0; opacity: 1; } }
-        @keyframes blink { 0%, 100% { border-color: transparent; } 50% { border-color: inherit; } }
-
-        
+        /* Cards Section */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -149,19 +113,13 @@
 
         .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); background: #00bcd4; color: #fff; }
 
-        
+        /* Footer */
         footer {
             background: #111;
             color: #fff;
             text-align: center;
             padding: 30px 20px;
             margin-top: 50px;
-        }
-
-        .footer-content h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            letter-spacing: 1px;
         }
 
         .social-links {
@@ -171,35 +129,22 @@
             gap: 25px;
         }
 
-        .social-links a {
-            color: #fff;
-            font-size: 24px;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-
-        
+        .social-links a { color: #fff; font-size: 24px; transition: 0.3s; }
         .social-links a:hover { transform: translateY(-5px); }
         .fa-behance:hover { color: #0057ff; }
         .fa-github:hover { color: #6e5494; }
         .fa-whatsapp:hover { color: #25d366; }
         .fa-linkedin:hover { color: #0077b5; }
 
-        .copyright {
-            font-size: 14px;
-            opacity: 0.7;
-            border-top: 1px solid #333;
-            padding-top: 15px;
-            margin-top: 10px;
-        }
+        .copyright { font-size: 14px; opacity: 0.7; border-top: 1px solid #333; padding-top: 15px; margin-top: 10px; }
 
-        /* Mobile Responsive */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+
         @media (max-width: 600px) {
             .navbar { flex-direction: column; padding: 10px; }
             .nav-links { margin-top: 10px; gap: 10px; justify-content: center; }
             .cards { grid-template-columns: 1fr; padding: 20px; }
         }
-
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
@@ -215,12 +160,9 @@
     </nav>
 
     <div class="profile">
-        <img src="Images/p9.png" alt="Mohit Pathak Profile">
+        <img src="images/p9.png" alt="Mohit Pathak Profile">
         <h1>Mohit Pathak</h1>
-        <div class="typing-wrapper">
-            <div class="text text1">UI/UX Designer</div>
-            <div class="text text2">Graphic Designer</div>
-        </div>
+        <div class="role-static">UI/UX Designer | Graphic Designer</div>
     </div>
 
     <div class="cards">
