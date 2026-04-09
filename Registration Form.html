@@ -3,98 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registration Form</title>
+    <style>
+        
+        body {
+            background: linear-gradient(135deg, #e0ffff 0%, #00ced1 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            background-color: cyan; 
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+        }
+
+        
+        caption {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px; 
+            padding: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        td {
+            padding: 12px;
+            font-weight: 500;
+        }
+
+        input[type="text"], 
+        input[type="Number"], 
+        input[type="email"],
+        input[type="date"],
+        input[type="time"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        input[type="submit"] { background-color: #008b8b; color: white; }
+        input[type="reset"] { background-color: #ff4d4d; color: white; }
+        
+        input[type="submit"]:hover { background-color: #005f5f; }
+        input[type="reset"]:hover { background-color: #cc0000; }
+
+    </style>
 </head>
-<link href="main.css" rel="stylesheet" type="text/css">
-<style>
-table {
-    width: 100%;
-    max-width: 600px;
-    margin: 40px auto;
-    background-color: cyan;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px gray;
-}
-
-input[type="text"], 
-input[type="Number"], 
-textarea {
-    width: 100%;
-    padding: 8px;
-    box-sizing: border-box;
-}
-
-</style>
-<nav></nav>
 <body>
-    <header>
-    <h1 class="textstyle"></h1>
-    
-    </header>
-
 
     <main>
-        <table border="0" cellpadding="10">
-            <caption>Registration Form <Form:get></Form:get></caption>
-            <form action="http://netplaybinge/user/login.php" Method="post">
+        <table border="0">
+            <caption>Registration Form</caption>
+            <form action="http://netplaybinge/user/login.php" method="post">
 
             <tr>
-            <td><label for="forname">Name</label></td>
-            <td><input title="Type name here " placeholder ="Type First Name"
-            id="forname" type="text" required></td>
-
+                <td><label for="forname">Name</label></td>
+                <td><input title="Type name here" placeholder="Type First Name" id="forname" type="text" required></td>
             </tr>
 
             <tr>
-            <td><label for="forage">Age</label></td>
-            <td><input title="Type Age here " placeholder ="Type your age "
-            id="forage" type="Number" required max="40" min="18"></td>
-
+                <td><label for="forage">Age</label></td>
+                <td><input title="Type Age here" placeholder="Type your age" id="forage" type="Number" required max="40" min="18"></td>
             </tr>
 
             <tr>
-            <td><label >Message</label></td>
-            <td>
-                <textarea rows="10" cols="40"></textarea>
-
+                <td><label>Message</label></td>
+                <td><textarea rows="4"></textarea></td>
             </tr>
 
             <tr>
-            <td><label >Gender</label></td>
-            <td>
-Male <input type="radio" value="Male" name="gender">
-Female <input type="radio" value="Female" name="gender">
-Others<input type="radio" value="Other" name="gender">
-            </td>
-
+                <td><label>Gender</label></td>
+                <td>
+                    <input type="radio" value="Male" name="gender"> Male 
+                    <input type="radio" value="Female" name="gender"> Female 
+                    <input type="radio" value="Other" name="gender"> Others
+                </td>
             </tr>
 
             <tr>
-            <td><label >Hobby</label></td>
-            <td>
-                Reading<input type="checkbox" value="Reading">
-                Writing<input type="checkbox" value="Writing">
-                Dancing<input type="checkbox" value="Dancing">
-            </td>
-
+                <td><label>Hobby</label></td>
+                <td>
+                    <input type="checkbox" value="Reading"> Reading
+                    <input type="checkbox" value="Writing"> Writing
+                    <input type="checkbox" value="Dancing"> Dancing
+                </td>
             </tr>
 
-            </tr>
             <tr>
-            <td></td>
-            <td>
+                <td><label>Country</label></td>
+                <td>
+                    <select>
+                        <option value="India">India</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="Germany">Germany</option>
+                        <option value="France">France</option>
+                    </select>
+                </td>
+            </tr>
 
-            <input type="submit" value="Register">
-            <input type="reset"></td>
+            <tr>
+                <td><label>E-mail</label></td>
+                <td><input type="email" placeholder="example@mail.com"></td>
+            </tr>
+
+            <tr>
+                <td><label>Upload picture</label></td>
+                <td><input type="file"></td>
+            </tr>
+
+            <tr>
+                <td><label>DOB</label></td>
+                <td><input type="date"></td>
+            </tr>
+
+            <tr>
+                <td><label>Time</label></td>
+                <td><input type="time"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Reset">
+                </td>
             </tr>
             </form>
-
         </table>
-
     </main>
 
-
-
-        <footer></footer>
-
-    </body>
+</body>
+</html>
