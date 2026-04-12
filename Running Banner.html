@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed & Responsive Banner</title>
+    <style>
+       
+        @keyframes runtext {
+            from { left: -500px; }
+            to { left: 100%; }
+        }
+
+        @keyframes mycolor {
+            0%, 100% { color: #c2c2fa; }
+            50% { color: #ffffff; }
+        } 
+
+        @keyframes changepic {
+            0%, 9%   { background-image: url('Images/p16.jpg'); }
+            10%, 19% { background-image: url('Images/p17.jpg'); }
+            20%, 29% { background-image: url('Images/p18.jpg'); }
+            30%, 39% { background-image: url('Images/p19.jpg'); }
+            40%, 49% { background-image: url('Images/p20.jpg'); }
+            50%, 59% { background-image: url('Images/p21.jpg'); }
+            60%, 69% { background-image: url('Images/p22.jpg'); }
+            70%, 79% { background-image: url('Images/p23.jpg'); }
+            80%, 89% { background-image: url('Images/p24.jpg'); }
+            90%, 100% { background-image: url('Images/p25.gif'); }
+        }
+
+        header {
+            
+            width: 80%;              
+            max-width: 1200px;       
+            height: 500px;           
+            margin: 20px auto;       
+            overflow: hidden;
+            position: relative;
+            background-color: #000; 
+            border: 3px solid #333;
+            border-radius: 10px;
+
+            
+            background-repeat: no-repeat;
+            background-size: cover !important;    
+            background-position: center center;    
+            
+            animation: changepic 35s steps(1) infinite; 
+        }
+
+        #text {
+            position: absolute;
+            top: 1px;             
+            font-family: 'Helvetica Black', Arial, sans-serif;
+            font-weight: 900;
+            font-size: 45px;         
+            text-transform: uppercase;
+            white-space: nowrap;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+            z-index: 10;
+            animation: runtext 20s linear infinite alternate, mycolor 2s infinite;
+        }
+
+
+        /* For Tablets */
+        @media (max-width: 1024px) {
+            header {
+                width: 90%;          
+                height: 400px;
+            }
+            #text { font-size: 35px; }
+        }
+
+        /* For Mobile Phones */
+        @media (max-width: 600px) {
+            header {
+                width: 95%;         
+                height: 300px;       
+            }
+            #text {
+                font-size: 22px;     
+                top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div id="text">Welcome to Automobile World</div>
+    </header>
+
+</body>
+</html>
