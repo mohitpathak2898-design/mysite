@@ -5,91 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Running Banner</title>
     <style>
-       
-        @keyframes runtext {
-            from { left: -500px; }
-            to { left: 100%; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        @keyframes mycolor {
-            0%, 100% { color: #c2c2fa; }
-            50% { color: #ffffff; }
-        } 
-
-        @keyframes changepic {
-            0%, 9%   { background-image: url('Images/p16.jpg'); }
-            10%, 19% { background-image: url('Images/p17.jpg'); }
-            20%, 29% { background-image: url('Images/p18.jpg'); }
-            30%, 39% { background-image: url('Images/p19.jpg'); }
-            40%, 49% { background-image: url('Images/p20.jpg'); }
-            50%, 59% { background-image: url('Images/p21.jpg'); }
-            60%, 69% { background-image: url('Images/p22.jpg'); }
-            70%, 79% { background-image: url('Images/p23.jpg'); }
-            80%, 89% { background-image: url('Images/p24.jpg'); }
-            90%, 100% { background-image: url('Images/p25.gif'); }
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        header {
-            
-            width: 80%;              
-            max-width: 1200px;       
-            height: 500px;           
-            margin: 20px auto;       
+        .navbar {
+            width: 100%;
+            background: #ffffff;
+            padding: 15px 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .slider-box {
+            width: 95%;           
+            max-width: 1100px;     
+            height: 500px;         
             overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background: #000;
             position: relative;
-            background-color: #000; 
-            border: 3px solid #333;
-            border-radius: 10px;
-
-            
-            background-repeat: no-repeat;
-            background-size: cover !important;    
-            background-position: center center;    
-            
-            animation: changepic 35s steps(1) infinite; 
         }
 
-        #text {
+        .moving-text {
             position: absolute;
-            top: 1px;             
-            font-family: 'Helvetica Black', Arial, sans-serif;
-            font-weight: 900;
-            font-size: 45px;         
-            text-transform: uppercase;
+            top: 3%; 
             white-space: nowrap;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.9);
+            font-size: 4rem;
+            font-weight: 900;
             z-index: 10;
-            animation: runtext 20s linear infinite alternate, mycolor 2s infinite;
+            color: cyan; 
+            text-transform: uppercase;
+            animation: textFlow 10s infinite alternate ease-in-out;
         }
 
-
-        /* For Tablets */
-        @media (max-width: 1024px) {
-            header {
-                width: 90%;          
-                height: 400px;
-            }
-            #text { font-size: 35px; }
+        .pic-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
-        /* For Mobile Phones */
-        @media (max-width: 600px) {
-            header {
-                width: 95%;         
-                height: 300px;       
-            }
-            #text {
-                font-size: 22px;     
-                top: 10px;
+        .pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            /* Total duration increased to 32s */
+            animation: changePic 32s infinite; 
+        }
+
+       
+        @keyframes changePic {
+            0%, 9.3% { opacity: 1; }  
+            9.31%, 100% { opacity: 0; }
+        }
+
+       
+        @keyframes changeGif {
+            0%, 15.6% { opacity: 1; } 
+            15.61%, 100% { opacity: 0; }
+        }
+
+        
+        .pic:nth-child(1) { animation-delay: 0s; }
+        .pic:nth-child(2) { animation-delay: 3s; }
+        .pic:nth-child(3) { animation-delay: 6s; }
+        .pic:nth-child(4) { animation-delay: 9s; }
+        .pic:nth-child(5) { animation-delay: 12s; }
+        .pic:nth-child(6) { animation-delay: 15s; }
+        .pic:nth-child(7) { animation-delay: 18s; }
+        .pic:nth-child(8) { animation-delay: 21s; }
+        .pic:nth-child(9) { animation-delay: 24s; }
+
+        
+        .pic:nth-child(10) { 
+            animation-name: changeGif; 
+            animation-delay: 27s; 
+        }
+
+        @keyframes textFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        @media (max-width: 992px) {
+            .slider-box {
+                height: 400px; 
+                width: 90%;
             }
         }
+        
+        @media (max-width: 768px) {
+            .slider-box { height: 350px; }
+            .moving-text { font-size: 2.5rem; top: 25%; }
+        }
+
+        @media (max-width: 480px) {
+            .slider-box {
+                height: 200px; 
+                border-radius: 8px;
+            }
     </style>
 </head>
 <body>
 
-    <header>
-        <div id="text">Welcome to Automobile World</div>
-    </header>
+    <nav class="navbar">
+        <a href="index.html" class="back-btn">← Back</a>
+    </nav>
+
+    <div class="slider-box">
+        <div class="moving-text">Welcome To Car World</div>
+
+        <div class="pic-container">
+            <img src="Images/p16.jpg" class="pic">
+            <img src="Images/p17.jpg" class="pic">
+            <img src="Images/p18.jpg" class="pic">
+            <img src="Images/p19.jpg" class="pic">
+            <img src="Images/p20.jpg" class="pic">
+            <img src="Images/p21.jpg" class="pic">
+            <img src="Images/p22.jpg" class="pic">
+            <img src="Images/p23.jpg" class="pic">
+            <img src="Images/p24.jpg" class="pic">
+            <img src="Images/p25.gif" class="pic">
+        </div>
+    </div>
 
 </body>
 </html>
