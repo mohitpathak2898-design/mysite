@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Frames - Mohit Pathak</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-top: 30px;
+        }
+
+        
+        iframe {
+            width: 100%;        
+            max-width: 900px;   
+            display: block;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px; 
+        }
+
+        
+        .portfolio-frame { height: 500px; }
+        .table-frame { height: 400px; }
+        .video-frame { 
+            aspect-ratio: 16 / 9; 
+            height: auto; 
+            max-width: 700px; 
+        }
+        .map-frame { height: 400px; max-width: 600px; }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 600px) {
+            body { padding: 10px; }
+            h1 { font-size: 1.2rem; }
+            .portfolio-frame { height: 400px; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>My Portfolio Website</h1>
+    <iframe src="https://mohitpathak2898-design.github.io/mysite/" class="portfolio-frame"></iframe>
+
+    <h1>Html Table</h1>
+    <iframe src="Table.html" class="table-frame" frameborder="0"></iframe>
+
+    <h1>Using Youtube Video</h1>
+    <iframe class="video-frame" 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+    </iframe>
+
+    <h1>My Location</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13989.817830347947!2d77.1914658275874!3d28.765700867828503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1776271211708!5m2!1sen!2sin" class="map-frame" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+
+</body>
+</html>
