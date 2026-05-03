@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Pathak - Profile</title>
   <style>
-   
-  
+    * {
+    -webkit-tap-highlight-color: transparent;
+}
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif; 
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     body{
@@ -27,7 +28,8 @@
       padding:15px 50px;
       background:#ffffff;
       box-shadow:0 2px 5px rgba(0,0,0,0.1);
-      position: relative;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
 
@@ -53,16 +55,49 @@
       color:#4a6cf7;
     }
 
-    
+   
     #check {
       display: none; 
     }
 
     .checkbtn {
-      font-size: 30px;
-      color: #333;
       cursor: pointer;
       display: none; 
+      width: 30px;
+      height: 22px;
+      position: relative;
+    }
+
+    
+    .checkbtn span, 
+    .checkbtn span::before, 
+    .checkbtn span::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      background: #333;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .checkbtn span { top: 50%; transform: translateY(-50%); }
+    .checkbtn span::before { top: -8px; }
+    .checkbtn span::after { top: 8px; }
+
+    
+    #check:checked ~ .checkbtn span {
+      background: transparent; 
+    }
+
+    #check:checked ~ .checkbtn span::before {
+      transform: rotate(45deg);
+      top: 0;
+    }
+
+    #check:checked ~ .checkbtn span::after {
+      transform: rotate(-45deg);
+      top: 0;
     }
 
    
@@ -109,7 +144,7 @@
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-    
+   
     .section{
       padding:50px;
       text-align:center;
@@ -187,7 +222,7 @@
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
       }
 
-      
+     
       #check:checked ~ ul {
         display: flex;
       }
@@ -223,7 +258,9 @@
 
     <input type="checkbox" id="check">
     
-    <label for="check" class="checkbtn">☰</label>
+    <label for="check" class="checkbtn">
+      <span></span>
+    </label>
 
     <ul>
       <li><a href="home page.html">Home</a></li>
