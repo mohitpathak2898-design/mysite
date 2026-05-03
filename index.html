@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Pathak - Profile</title>
   <style>
-    
+   
+  
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif; 
     }
 
     body{
@@ -18,22 +19,16 @@
       color:#333;
     }
 
+    
     nav{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:20px 50px;
+      padding:15px 50px;
       background:#ffffff;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
       z-index: 1000;
-    }
-
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 10px; 
     }
 
     .logo{
@@ -52,55 +47,40 @@
       text-decoration:none;
       color:#333;
       font-weight:500;
-      transition:0.3s;
     }
 
     nav ul li a:hover{
       color:#4a6cf7;
     }
 
-   
+    
     #check {
-      display: none;
+      display: none; 
     }
 
     .checkbtn {
-      display: none; 
+      font-size: 30px;
+      color: #333;
       cursor: pointer;
-      padding: 5px;
+      display: none; 
     }
 
    
-    .checkbtn span,
-    .checkbtn span::before,
-    .checkbtn span::after {
-      display: block;
-      background: #333;
-      height: 3px;
-      width: 25px;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .checkbtn span::before { content: ""; position: absolute; top: -8px; }
-    .checkbtn span::after { content: ""; position: absolute; top: 8px; }
-
-    
     .hero{
       display:flex;
-      justify-content: flex-start; 
+      justify-content: space-around; 
       align-items:center;
-      padding:60px 50px 60px 100px; 
-      gap:40px; 
+      padding:60px 50px; 
+      gap:20px; 
     }
 
     .hero-text{
-      max-width:580px;
+      max-width:500px;
     }
 
     .hero-text h1{
-      font-size:42px;
-      margin-bottom:15px;
+      font-size:40px;
+      margin-bottom:10px;
     }
 
     .hero-text span{
@@ -108,65 +88,55 @@
     }
 
     .hero-text p{
-      margin:20px 0;
-      line-height:1.6;
+      margin:15px 0;
+      line-height:1.5;
     }
 
     .btn{
       display:inline-block;
-      padding:10px 20px;
+      padding:12px 24px;
       background:#4a6cf7;
       color:#fff;
-      border-radius:8px;
+      border-radius:5px;
       text-decoration:none;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:#2f4be0;
     }
 
     .hero img {
-        width: 300px;         
-        height: 300px;        
+        width: 280px;         
+        height: 280px;        
         border-radius: 50%;   
         object-fit: cover;    
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        flex-shrink: 0;
-        position: relative;
-        top: -15px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
 
-   
+    
     .section{
-      padding:60px 50px;
+      padding:50px;
       text-align:center;
     }
 
     .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      display:flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap:20px;
       margin-top:30px;
     }
 
     .card{
       background:#fff;
-      padding:20px;
-      border-radius:15px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.05);
-      transition:0.3s;
+      padding:25px;
+      width: 280px;
+      border-radius:10px;
+      box-shadow:0 4px 8px rgba(0,0,0,0.05);
     }
 
-    .card:hover{
-      transform:translateY(-5px);
-    }
-
-   
+    
     footer{
       background:#111;
       color:#fff;
       padding:40px 50px;
+      margin-top: 50px;
     }
 
     .footer-container{
@@ -185,76 +155,62 @@
       text-decoration:none;
     }
 
-    footer ul li a:hover{
-      color:#4a6cf7;
-    }
-
     .footer-bottom{
       text-align:center;
-      margin-top:20px;
+      margin-top:30px;
       font-size:14px;
-      color:#aaa;
+      border-top: 1px solid #333;
+      padding-top: 20px;
     }
 
-   
+    
     @media(max-width:768px){
+      
+      nav{
+        padding: 15px 20px;
+      }
+
       .checkbtn {
         display: block; 
       }
 
       nav ul {
+        display: none; 
         position: absolute;
-        top: 100%;
-        left: -100%; 
+        top: 60px;
+        left: 0;
         width: 100%;
         background: #ffffff;
         flex-direction: column;
-        gap: 0;
-        transition: all 0.4s ease;
+        text-align: center;
+        border-top: 1px solid #ddd;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        z-index: 999;
       }
 
       
       #check:checked ~ ul {
-        left: 0;
-      }
-
-      
-      #check:checked ~ .checkbtn span { 
-        background: transparent; 
-      }
-      #check:checked ~ .checkbtn span::before { 
-        transform: rotate(45deg); 
-        top: 0; 
-      }
-      #check:checked ~ .checkbtn span::after { 
-        transform: rotate(-45deg); 
-        top: 0; 
+        display: flex;
       }
 
       nav ul li {
-        width: 100%;
-        text-align: center;
+        margin: 0;
+        border-bottom: 1px solid #eee;
       }
 
       nav ul li a {
         padding: 15px;
         display: block;
-        border-bottom: 1px solid #eee;
       }
 
       .hero{
-        flex-direction:column-reverse; 
+        flex-direction:column-reverse;
         text-align:center;
-        padding:40px 20px;
-        justify-content: center;
+        padding:30px 20px;
       }
       
       .hero img {
-        width: 250px;
-        height: 250px;
-        top: 0;
+        width: 220px;
+        height: 220px;
         margin-bottom: 20px;
       }
     }
@@ -263,15 +219,11 @@
 <body>
 
   <nav>
-    <div class="logo-container">
-      <div class="logo">Mohit Pathak</div>
-    </div>
+    <div class="logo">Mohit Pathak</div>
 
     <input type="checkbox" id="check">
     
-    <label for="check" class="checkbtn">
-      <span></span>
-    </label>
+    <label for="check" class="checkbtn">☰</label>
 
     <ul>
       <li><a href="home page.html">Home</a></li>
@@ -287,8 +239,8 @@
       <h3>UI/UX Designer</h3>
       <p>
         I am a creative UI/UX design learner passionate about building clean,
-        user-friendly and visually appealing designs. Currently pursuing a UI/UX design course along with graphic designing and web designing. 
-        I love exploring new design ideas and improving my skills every day.
+        user-friendly and visually appealing designs. I love exploring new
+        design ideas and improving my skills every day.
       </p>
       <a href="all practice work.html" class="btn">View My Work</a>
     </div>
