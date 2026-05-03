@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Pathak - Profile</title>
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
   <style>
-   
+    
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
     }
 
     body{
@@ -26,7 +25,8 @@
       padding:20px 50px;
       background:#ffffff;
       box-shadow:0 2px 10px rgba(0,0,0,0.05);
-      position: relative;
+      position: sticky;
+      top: 0;
       z-index: 1000;
     }
 
@@ -53,27 +53,39 @@
       color:#333;
       font-weight:500;
       transition:0.3s;
-      display: flex;
-      align-items: center;
-      gap: 5px;
     }
 
     nav ul li a:hover{
       color:#4a6cf7;
     }
 
-    
+   
     #check {
       display: none;
     }
 
     .checkbtn {
-      font-size: 28px;
-      color: #333;
-      cursor: pointer;
       display: none; 
+      cursor: pointer;
+      padding: 5px;
     }
 
+   
+    .checkbtn span,
+    .checkbtn span::before,
+    .checkbtn span::after {
+      display: block;
+      background: #333;
+      height: 3px;
+      width: 25px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .checkbtn span::before { content: ""; position: absolute; top: -8px; }
+    .checkbtn span::after { content: ""; position: absolute; top: 8px; }
+
+    
     .hero{
       display:flex;
       justify-content: flex-start; 
@@ -125,6 +137,7 @@
         top: -15px;
     }
 
+   
     .section{
       padding:60px 50px;
       text-align:center;
@@ -149,6 +162,7 @@
       transform:translateY(-5px);
     }
 
+   
     footer{
       background:#111;
       color:#fff;
@@ -172,7 +186,7 @@
     }
 
     footer ul li a:hover{
-      color:blue;
+      color:#4a6cf7;
     }
 
     .footer-bottom{
@@ -182,7 +196,7 @@
       color:#aaa;
     }
 
- 
+   
     @media(max-width:768px){
       .checkbtn {
         display: block; 
@@ -196,13 +210,27 @@
         background: #ffffff;
         flex-direction: column;
         gap: 0;
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 999;
       }
 
-     
+      
       #check:checked ~ ul {
         left: 0;
+      }
+
+      
+      #check:checked ~ .checkbtn span { 
+        background: transparent; 
+      }
+      #check:checked ~ .checkbtn span::before { 
+        transform: rotate(45deg); 
+        top: 0; 
+      }
+      #check:checked ~ .checkbtn span::after { 
+        transform: rotate(-45deg); 
+        top: 0; 
       }
 
       nav ul li {
@@ -217,7 +245,7 @@
       }
 
       .hero{
-        flex-direction:column;
+        flex-direction:column-reverse; 
         text-align:center;
         padding:40px 20px;
         justify-content: center;
@@ -227,6 +255,7 @@
         width: 250px;
         height: 250px;
         top: 0;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -239,15 +268,16 @@
     </div>
 
     <input type="checkbox" id="check">
+    
     <label for="check" class="checkbtn">
-      <i class="ri-menu-line"></i>
+      <span></span>
     </label>
 
     <ul>
       <li><a href="home page.html">Home</a></li>
       <li><a href="all practice work.html">Practice</a></li>
       <li><a href="project.html">Project</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="#">Contact</a></li>
     </ul>
   </nav>
 
@@ -258,8 +288,7 @@
       <p>
         I am a creative UI/UX design learner passionate about building clean,
         user-friendly and visually appealing designs. Currently pursuing a UI/UX design course along with graphic designing and web designing. 
-         I love exploring new
-        design ideas and improving my skills every day.
+        I love exploring new design ideas and improving my skills every day.
       </p>
       <a href="all practice work.html" class="btn">View My Work</a>
     </div>
