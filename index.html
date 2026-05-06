@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Pathak - Profile</title>
   <style>
+
     * {
+   
     -webkit-tap-highlight-color: transparent;
+    
 }
+    
     *{
       margin:0;
       padding:0;
@@ -49,6 +53,7 @@
       text-decoration:none;
       color:#333;
       font-weight:500;
+      transition: 0.3s;
     }
 
     nav ul li a:hover{
@@ -164,6 +169,14 @@
       width: 280px;
       border-radius:10px;
       box-shadow:0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    }
+
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      border-bottom: 3px solid #4a6cf7;
     }
 
     
@@ -185,9 +198,20 @@
       list-style:none;
     }
 
+    footer ul li {
+      margin-bottom: 8px;
+    }
+
     footer ul li a{
       color:#ccc;
       text-decoration:none;
+      transition: color 0.3s ease; 
+    }
+
+    
+    footer ul li a:hover {
+      color: #4a6cf7; 
+      text-decoration: underline;
     }
 
     .footer-bottom{
@@ -275,7 +299,7 @@
       <h1>Hi, I'm <span>Mohit</span></h1>
       <h3>UI/UX Designer</h3>
       <p>
-        I am a creative UI/UX design learner passionate about building clean,
+        I'm a passionate and creative UI/UX design learner. Currently pursuing a UI/UX design course along with graphic designing and web designing. I'm a creative             UI/UX design learner passionate about building clean,
         user-friendly and visually appealing designs. I love exploring new
         design ideas and improving my skills every day.
       </p>
