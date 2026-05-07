@@ -5,62 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohit Pathak - Profile</title>
   <style>
-
     * {
-   
-    -webkit-tap-highlight-color: transparent;
-    
-}
-    
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+      -webkit-tap-highlight-color: transparent;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
     }
 
-    body{
-      background:#f5f7fb;
-      color:#333;
+    body {
+      background: #f5f7fb;
+      color: #333;
     }
 
     
-    nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:15px 50px;
-      background:#ffffff;
-      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: #ffffff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
-    .logo{
-      font-size:22px;
-      font-weight:bold;
-      color:#4a6cf7;
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #4a6cf7;
     }
 
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:25px;
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
     }
 
-    nav ul li a{
-      text-decoration:none;
-      color:#333;
-      font-weight:500;
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
       transition: 0.3s;
     }
 
-    nav ul li a:hover{
-      color:#4a6cf7;
+    nav ul li a:hover {
+      color: #4a6cf7;
     }
 
-   
     #check {
       display: none; 
     }
@@ -73,7 +66,6 @@
       position: relative;
     }
 
-    
     .checkbtn span, 
     .checkbtn span::before, 
     .checkbtn span::after {
@@ -90,7 +82,6 @@
     .checkbtn span::before { top: -8px; }
     .checkbtn span::after { top: 8px; }
 
-    
     #check:checked ~ .checkbtn span {
       background: transparent; 
     }
@@ -105,134 +96,149 @@
       top: 0;
     }
 
-   
-    .hero{
-      display:flex;
-      justify-content: space-around; 
-      align-items:center;
-      padding:60px 50px; 
-      gap:20px; 
+    
+    .hero {
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      padding: 80px 50px; 
+      gap: 80px; 
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    .hero-text{
-      max-width:500px;
+    .hero-text {
+      max-width: 600px;
+      text-align: left; 
     }
 
-    .hero-text h1{
-      font-size:40px;
-      margin-bottom:10px;
+    .hero-text h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
-    .hero-text span{
-      color:#4a6cf7;
+    .hero-text span {
+      color: #4a6cf7;
     }
 
-    .hero-text p{
-      margin:15px 0;
-      line-height:1.5;
+    .hero-text p {
+      margin: 20px 0;
+      line-height: 1.6;
+      font-size: 16px;
     }
 
-    .btn{
-      display:inline-block;
-      padding:12px 24px;
-      background:#4a6cf7;
-      color:#fff;
-      border-radius:5px;
-      text-decoration:none;
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: #4a6cf7;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #3556d1;
     }
 
     .hero img {
-        width: 280px;         
-        height: 280px;        
-        border-radius: 50%;   
-        object-fit: cover;    
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 300px;         
+      height: 300px;        
+      border-radius: 50%;   
+      object-fit: cover;    
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
-   
-    .section{
-      padding:50px;
-      text-align:center;
+    
+    .section {
+      padding: 80px 50px;
+      text-align: center;
     }
 
-    .cards{
-      display:flex;
+    .cards {
+      display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap:20px;
-      margin-top:30px;
+      gap: 30px;
+      margin-top: 40px;
     }
 
-    .card{
-      background:#fff;
-      padding:25px;
-      width: 280px;
-      border-radius:10px;
-      box-shadow:0 4px 8px rgba(0,0,0,0.05);
+    .card {
+      background: #fff;
+      padding: 30px;
+      width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease; 
     }
 
-    
     .card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      border-bottom: 3px solid #4a6cf7;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+        margin-bottom: 15px;
+        color: #4a6cf7;
     }
 
     
-    footer{
-      background:#111;
-      color:#fff;
-      padding:40px 50px;
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 60px 50px 20px;
       margin-top: 50px;
     }
 
-    .footer-container{
-      display:flex;
-      justify-content:space-between;
-      flex-wrap:wrap;
-      gap:20px;
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    footer ul{
-      list-style:none;
+   
+    .footer-links-list {
+      display: flex;
+      flex-direction: column; 
+      list-style: none;
+      gap: 12px; 
+      padding-top: 15px;
     }
 
-    footer ul li {
-      margin-bottom: 8px;
+    footer h4 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: white;
     }
 
-    footer ul li a{
-      color:#ccc;
-      text-decoration:none;
+    footer ul li a {
+      color: #ccc;
+      text-decoration: none;
       transition: color 0.3s ease; 
     }
 
-    
     footer ul li a:hover {
-      color: #4a6cf7; 
-      text-decoration: underline;
+      color: blue; 
+      padding-left: 5px; 
     }
 
-    .footer-bottom{
-      text-align:center;
-      margin-top:30px;
-      font-size:14px;
+    .footer-bottom {
+      text-align: center;
+      margin-top: 50px;
+      font-size: 14px;
       border-top: 1px solid #333;
       padding-top: 20px;
+      color: #777;
     }
 
-    
+   
     @media(max-width:768px){
-      
-      nav{
-        padding: 15px 20px;
-      }
-
-      .checkbtn {
-        display: block; 
-      }
-
+      nav { padding: 15px 20px; }
+      .checkbtn { display: block; }
       nav ul {
         display: none; 
         position: absolute;
@@ -245,32 +251,26 @@
         border-top: 1px solid #ddd;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
       }
-
-     
-      #check:checked ~ ul {
-        display: flex;
-      }
-
-      nav ul li {
-        margin: 0;
-        border-bottom: 1px solid #eee;
-      }
-
-      nav ul li a {
-        padding: 15px;
-        display: block;
-      }
-
-      .hero{
-        flex-direction:column-reverse;
-        text-align:center;
-        padding:30px 20px;
-      }
+      #check:checked ~ ul { display: flex; }
+      nav ul li { border-bottom: 1px solid #eee; }
+      nav ul li a { padding: 15px; display: block; }
       
-      .hero img {
-        width: 220px;
-        height: 220px;
-        margin-bottom: 20px;
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px;
+      }
+      .hero-text {
+          text-align: center; 
+      }
+      .hero img { width: 250px; height: 250px; }
+      .footer-container {
+          flex-direction: column;
+          text-align: center;
+      }
+      .footer-links-list {
+          align-items: center;
       }
     }
   </style>
@@ -279,13 +279,10 @@
 
   <nav>
     <div class="logo">Mohit Pathak</div>
-
     <input type="checkbox" id="check">
-    
     <label for="check" class="checkbtn">
       <span></span>
     </label>
-
     <ul>
       <li><a href="home page.html">Home</a></li>
       <li><a href="all practice work.html">Practice</a></li>
@@ -299,8 +296,7 @@
       <h1>Hi, I'm <span>Mohit</span></h1>
       <h3>UI/UX Designer</h3>
       <p>
-        I'm a passionate and creative UI/UX design learner. Currently pursuing a UI/UX design course along with graphic designing and web designing. Creating clean, functional, and visually appealing digital experiences. 
-        I love exploring new design ideas and improving my skills every day.
+      I'm a passionate and creative UI/UX design learner. Currently pursuing a UI/UX design course along with graphic designing and web designing. Creating clean, functional, and visually appealing digital experiences. I love exploring new design ideas and improving my skills every day.
       </p>
       <a href="all practice work.html" class="btn">View My Work</a>
     </div>
@@ -329,11 +325,11 @@
     <div class="footer-container">
       <div>
         <h3>Mohit Pathak</h3>
-        <p>UI/UX Designer</p>
+        <p style="color: #888; margin-top: 5px;">UI/UX Designer</p>
       </div>
       <div>
-        <h4>Links</h4>
-        <ul>
+        <h4>Quick Links</h4>
+        <ul class="footer-links-list">
           <li><a href="home page.html">Home</a></li>
           <li><a href="all practice work.html">Practice</a></li>
           <li><a href="project.html">Project</a></li>
@@ -342,8 +338,8 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <p>Email: mohitpathak2898@gmail.com</p>
-        <p>Location: New Delhi, India</p>
+        <p style="color: #ccc; margin-top: 15px;">Email: mohitpathak2898@gmail.com</p>
+        <p style="color: #ccc; margin-top: 5px;">Location: New Delhi, India</p>
       </div>
     </div>
     <div class="footer-bottom">
