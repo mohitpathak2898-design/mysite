@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element Creation</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: #f5f7fb;
+        color: #333;
+    }
+
+    header {
+        background: #0b1d3a;
+        color: white;
+        margin-bottom: 30px;
+        text-align: center;
+        padding: 20px;
+        font-size: 30px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    
+    .dynamic-img {
+        display: block;
+        margin: 20px auto;
+        width: 40%;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: 0px 2px 10px gray;
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    @media (max-width: 600px) {
+        header { font-size: 20px; padding: 15px; }
+        .dynamic-img { width: 80%; }
+    }
+</style>
+
+<body>
+    <header>Creating Tag in JavaScript</header>
+
+    <script>
+        
+        var p = document.createElement("img");
+        p.className = "dynamic-img";
+        
+        
+        const firstImage = "Images/p51.jpg";
+        const secondImage = "Images/p52.jpg";
+        
+        p.src = firstImage;
+        document.body.appendChild(p);
+
+       
+        p.onclick = function() {
+            this.src = secondImage;
+        }
+
+        
+        p.onmouseover = function() {
+            this.style.transform = "scale(1.10)";
+        }
+
+      
+        p.onmouseout = function() {
+            this.style.transform = "scale(1)";
+            this.src = firstImage; 
+        }
+
+      
+    </script>
+
+</body>
+</html>

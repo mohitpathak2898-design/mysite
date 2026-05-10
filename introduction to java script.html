@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introduction to Java</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.5rem; padding: 10px; }
+        }
+
+        /* Tablets */
+        @media (min-width: 481px) and (max-width: 1024px) {
+            h1 { font-size: 2.5rem; }
+        }
+
+        /* Desktop/Laptops */
+        @media (min-width: 1025px) {
+            h1 { font-size: 4rem; }
+        }
+    </style>
+</head>
+<body>
+    <script>
+        window.document.bgColor = "yellow";
+        window.document.fgColor = "cyan";
+        
+      
+        document.write("<h1 id='msg'>Welcome to Java Script</h1>");
+        
+        var mainHeading = document.getElementById("msg");
+        
+       
+        mainHeading.style.textAlign = "center"; 
+        mainHeading.style.marginTop = "40px";   
+        mainHeading.style.width = "100%";       
+        
+       
+        document.body.style.display = "flex";
+        document.body.style.flexDirection = "column";
+        document.body.style.alignItems = "center"; 
+
+        alert("Hello World");
+        
+        var mycolor = prompt("set background color", "white");
+        document.body.style.backgroundColor = mycolor;
+        
+        document.title = "Java Script";
+        
+       // var answer = confirm("want to close.....?");
+        if (answer == true) {
+            window.close();
+        } else {
+            alert("window will not close since you had pressed cancel");
+        }
+    </script>
+</body>
+</html>
