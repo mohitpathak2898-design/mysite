@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Div by JS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html, body {
+            height: 100%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: cyan;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            z-index: 10;
+        }
+
+       
+        .main-wrapper {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .box {
+            border: 6px #0b1d3a double;
+            background: white;
+            border-radius: 10px;
+            transition: 0.50s;
+            width: 100%;
+            max-width: 400px; 
+            position: relative;
+            text-align: center;
+            overflow: hidden; 
+        }
+
+        
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            cursor: pointer;
+            background: #eee;
+            border: 1px solid #ccc;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        
+
+        .box h1 {
+            margin: 15px 0;
+            font-size: 24px;
+        }
+
+      
+        .box img {
+            width: 100%;
+            display: block; 
+            margin: 0;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            header {
+                font-size: 20px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>Creating Div By JavaScript</header>
+
+    <div class="main-wrapper" id="wrapper"></div>
+
+    <script>
+        var wrapper = document.getElementById("wrapper");
+        var d = document.createElement("div");
+        d.className = "box mystyle";
+        
+        
+        d.innerHTML = `
+            <button class="close-btn" onclick="closedilog()">X</button>
+            <h1>Anime GIF</h1>
+            <hr color='black' size='2'/>
+            <img src='Images/p54.gif' alt='GIF'>
+        `;
+
+        wrapper.appendChild(d);
+
+        function closedilog() {
+            wrapper.removeChild(d);
+        }
+    </script>
+</body>
+</html>
