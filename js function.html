@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Java Script</title>
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background-color: #fdf5e6; 
+        }
+
+        #myheading {
+            color: cyan;
+            font-size: 50px; 
+            text-align: center;
+            text-shadow: 5px 5px 5px blue;
+            border: 5px solid blue; 
+            padding: 20px;
+            margin: 20px auto;
+            width: fit-content; 
+            max-width: 90%; 
+            border-radius: 10px;
+            word-wrap: break-word;
+        }
+
+        .button-area {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; 
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            min-width: 100px;
+        }
+
+
+
+        
+        @media (max-width: 768px) {
+            #myheading {
+                font-size: 35px;
+                padding: 15px;
+            }
+        }
+
+        
+        @media (max-width: 480px) {
+            #myheading {
+                font-size: 24px;
+                padding: 10px;
+                border-width: 3px;
+            }
+            
+            .button-area {
+                flex-direction: column; 
+                align-items: center;
+            }
+
+            button {
+                width: 80%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="myheading">Using External Java Script</h1>
+    
+    <div class="button-area" id="btnContainer">
+        <button id="b1">Sum</button>
+    </div>
+
+    <script src="mylib.js"></script>
+
+    <script>
+    
+        var b = document.createElement("button");
+        document.getElementById("btnContainer").appendChild(b);
+        b.innerHTML = "click";
+        
+    
+        b.onclick = typeof wel !== 'undefined' ? wel : function() { alert("wel function not found!"); };
+        
+        
+        function sum() {
+            var n1 = prompt("Enter No 1", "0");
+            var n2 = prompt("Enter No 2", "0");
+            
+            
+            var num1 = parseInt(n1);
+            var num2 = parseInt(n2);
+            
+            if (!isNaN(num1) && !isNaN(num2)) {
+                var t = num1 + num2;
+                alert("Total Sum: " + t);
+            } else {
+                alert("Please enter valid numbers");
+            }
+        }
+
+        document.getElementById("b1").onclick = sum;
+    </script>
+</body>
+</html>
