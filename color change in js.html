@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,24 +7,21 @@
 </head>
 
 <style>
-
-    *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: Arial, Helvetica, sans-serif;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 html{
     scroll-behavior: smooth;
 }
 
-
 body{
-background-color:#f5f7fb;
-color:#333;
+    background-color:#f5f7fb;
+    color:#333;
 }
-
 
 header{
     background:#0b1d3a;
@@ -40,38 +36,46 @@ header{
 }
 
 footer{
-        width: 100%;
-        height: auto;
-        margin-top: 30px;
-        color: white;
-        background: #0b1d3a;
-        text-align: center;
-        padding: 10px;
-        clear: both;
-    }
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    color: white;
+    background: #0b1d3a;
+    text-align: center;
+    padding: 10px;
+    clear: both;
+}
 
 
 @media (max-width: 600px){
-
     header{
         font-size:20px;
         padding:15px;
-        
     }
 
     #footer{
         font-size:14px;
         padding:10px;
     }
-}
 
-    </style>
+    
+    #colorBtn {
+        font-size: 16px;    
+        padding: 12px 20px ;
+        margin: 80px auto; 
+    }
+}
+</style>
 
 <body>
     <header>Background Colour Change In Java Script</header>
+    
     <script>
         document.title= "Changing Colors in JS"
         var b = document.createElement("button")
+        
+        
+        b.id = "colorBtn" 
         document.body.appendChild(b)
 
         b.innerHTML="Creating Random Colour Of Background"
@@ -85,20 +89,23 @@ footer{
         b.style.margin="150px auto"
         b.style.transition="0.50s"
         b.style.display="block"
-    
+        
+        
+        b.style.maxWidth = "90%" 
+        b.style.whiteSpace = "normal" 
+
         function randomcolor()
         {
             var red= Math.round(Math.random()*255)
             var green= Math.round(Math.random()*255)
             var blue= Math.round(Math.random()*255)
             var c = "rgb("+red+","+green+","+blue+")"
-            //alert(c)
             document.body.style.background= c
         }
 
         b.onmouseover= function()
         {
-            b.style.transform= "scale(1.2)"
+            b.style.transform= "scale(1.05)" 
         }
 
         b.onmouseout= function()
@@ -107,8 +114,6 @@ footer{
         }
 
         b.onclick = randomcolor
-
     </script>
-
 </body>
 </html>
