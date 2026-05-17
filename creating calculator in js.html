@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Calculator by JS</title>
+</head>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    body{
+        background-color:#f5f7fb;
+        color:#333;
+        text-align: center;
+        font-size: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header{
+        background:#0b1d3a;
+        color:white;
+        margin-bottom: 30px;
+        text-align:center;
+        padding:20px;
+        font-size:30px;
+        letter-spacing:2px;
+        font-weight:bold;
+        box-shadow:0 4px 10px rgba(0,0,0,0.2);
+        width: 100%;
+    }
+
+   
+    
+    .calculator-box {
+        width: 100%;
+        max-width: 500px; 
+        padding: 20px;
+        margin: 0 auto;
+    }
+
+    
+    .input-group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .input-group label {
+        flex: 1;
+        font-weight: 500;
+        padding-right: 10px;
+    }
+
+    input{
+        flex: 1.2; 
+        width: 100%;
+        padding: 12px;
+        border: 2px solid #0b1d3a;
+        border-radius: 8px;
+        font-size: 18px;
+        outline: none;
+    }
+
+    #r{
+        background: lightblue;
+        font-weight: bold;
+    }
+
+    
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; 
+        margin-top: 20px;
+    }
+
+    button{
+        padding: 12px 25px;
+        font-size: 22px;
+        background: blue;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+        min-width: 70px;
+    }
+
+    button:hover{
+        transform: scale(1.1);
+        background: darkblue;
+    }
+
+    
+    @media (max-width: 600px){
+        header{
+            font-size:20px;
+            padding:15px;
+        }
+
+        #footer{
+            font-size:14px;
+            padding:10px;
+        } 
+        
+        body{
+            font-size: 16px;
+        }
+
+        .calculator-box {
+            width: 90%; 
+            padding: 10px;
+        }
+
+        .input-group {
+            flex-direction: column; 
+            align-items: stretch;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+
+        input{
+            font-size: 16px;
+            padding: 10px;
+        }
+
+        .button-container {
+            gap: 10px;
+        }
+
+        button{
+            flex: 1; 
+            min-width: 60px;
+            padding: 12px;
+            font-size: 18px;
+        }
+    }
+</style>
+
+<body>
+    <header>Creating Calculator In Java Script</header>
+
+    <div class="calculator-box">
+        <div class="input-group">
+            <label>Enter Number 1</label>
+            <input type="number" id="t1" value="0">
+        </div>
+
+        <div class="input-group">
+            <label>Enter Number 2</label>
+            <input type="number" id="t2" value="0">
+        </div>
+
+        <div class="input-group">
+            <label>Final Result</label>
+            <input type="number" id="r" value="0" readonly>
+        </div>
+
+        <div class="button-container">
+            <button onclick="f1()">+</button>
+            <button onclick="f2()">-</button>
+            <button onclick="f3()">*</button>
+            <button onclick="f4()">/</button>
+        </div>
+    </div>
+
+    <script>
+       var n1 = document.getElementById("t1") 
+       var n2 = document.getElementById("t2") 
+       var n = document.getElementById("r") 
+
+        function f1()
+        {
+            var calculate = parseInt(n1.value)+parseInt(n2.value)
+            r.value=calculate
+        }
+
+        function f2()
+        {
+            var calculate = parseInt(n1.value)-parseInt(n2.value)
+            r.value=calculate
+        }
+
+        function f3()
+        {
+            var calculate = parseInt(n1.value)*parseInt(n2.value)
+            r.value=calculate
+        }
+
+        function f4()
+        {
+            var calculate = parseInt(n1.value)/parseInt(n2.value)
+            r.value=calculate
+        }
+    </script>
+</body>
+</html>
