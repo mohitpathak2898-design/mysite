@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+       
+        .header {
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 1.8em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            width: 100%;
+            padding: 20px;
+        }
+
+        
+        .clock-box {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            width: 100%;
+            max-width: 450px; 
+            margin: 20px auto;
+        }
+
+        #clock {
+            font-size: 3em; 
+            font-weight: bold;  
+            margin-top: 10px;
+            color: #222;
+        }
+
+        #date {
+            font-size: 1.3em;
+            color: #666;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        
+        .btn {
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+
+        .btn-stop {
+            background-color: #e74c3c;
+        }
+
+        .btn-stop:hover {
+            background-color: #c0392b;
+        }
+
+        .btn-start {
+            background-color: #2ecc71;
+        }
+
+        .btn-start:hover {
+            background-color: #27ae60;
+        }
+
+        
+        @media (max-width: 768px) {
+            .header {
+                font-size: 1.5em;
+            }
+            #clock {
+                font-size: 2.5em;
+            }
+            .clock-box {
+                max-width: 90%;
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                font-size: 1.2em;
+                padding: 15px 5px;
+            }
+            #clock {
+                font-size: 2.2em;
+            }
+            #date {
+                font-size: 1.1em;
+            }
+            .btn {
+                width: 100%; 
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        Creating Date and Time in Java Script
+    </div>
+
+    <div class="container">
+        <div class="clock-box">
+            <div id="clock"></div>
+            <div id="date"></div>
+            <button id="toggleBtn" class="btn btn-stop">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        let intervalId = null;
+        let isRunning = true;
+
+        function updateClock() {
+            const now = new Date();
+            
+            
+            const timeOptions = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                hour12: true,
+                timeZone: 'Asia/Kolkata'
+            };
+            document.getElementById('clock').textContent = now.toLocaleTimeString('en-IN', timeOptions);
+
+           
+            const dateOptions = { 
+                day: '2-digit', 
+                month: '2-digit', 
+                year: 'numeric',
+                timeZone: 'Asia/Kolkata'
+            };
+            document.getElementById('date').textContent = now.toLocaleDateString('en-IN', dateOptions);
+        }
+
+        
+        function toggleClock() {
+            const btn = document.getElementById('toggleBtn');
+            if (isRunning) {
+                clearInterval(intervalId);
+                btn.textContent = "Start";
+                btn.className = "btn btn-start";
+                isRunning = false;
+            } else {
+                updateClock(); 
+                intervalId = setInterval(updateClock, 1000);
+                btn.textContent = "Stop";
+                btn.className = "btn btn-stop";
+                isRunning = true;
+            }
+        }
+
+        
+        document.getElementById('toggleBtn').addEventListener('click', toggleClock);
+
+        
+        intervalId = setInterval(updateClock, 1000);
+        updateClock(); 
+    </script>
+</body>
+</html>
