@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Colour Palette In JavaScript</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f6f9;
+            transition: background 0.4s ease; 
+        }
+
+        
+        header {
+            width: 100%;
+            background: #0b1d3a;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        
+        .palette-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 6px; 
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            padding: 12px;
+            border: none;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+        }
+
+        button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            z-index: 10;
+            position: relative;
+        }
+
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.6rem;
+            }
+            td {
+                width: 40px;
+                height: 40px;
+            }
+            table {
+                border-spacing: 4px;
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+                padding: 5px;
+            }
+            td {
+                width: 28px;
+                height: 28px;
+            }
+            table {
+                border-spacing: 3px;
+                padding: 6px;
+            }
+            button {
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Creating Colour Palette In Java Script</h1>
+    </header>
+    
+    <div class="palette-container">
+        <table id="paletteTable"></table>
+    </div>
+    
+    <script>
+        var row = 10;
+        var col = 10;
+        
+        var table = document.getElementById("paletteTable");
+        var tableHTML = "";
+
+        for (var c = 1; c <= row; c++) {
+            tableHTML += "<tr>";
+            
+            for (var i = 1; i <= col; i++) {
+                var red = Math.round(Math.random() * 255);
+                var green = Math.round(Math.random() * 255);
+                var blue = Math.round(Math.random() * 255);
+                var myColor = `rgb(${red}, ${green}, ${blue})`;
+
+                tableHTML += `<td><button onclick='setcolor(this)' style='background:${myColor}'></button></td>`;
+            }
+            
+            tableHTML += "</tr>";
+        }
+
+        table.innerHTML = tableHTML;
+
+        
+        function setcolor(element) {
+            
+            document.body.style.backgroundColor = element.style.background;
+        }
+    </script>
+</body>
+</html>
