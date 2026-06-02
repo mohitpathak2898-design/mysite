@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Slider</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        
+        header {
+            background-color: black;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #fffefe;
+            font-size: 1.8rem;
+        }
+
+        
+        .container {
+            width: 90%;
+            max-width: 450px; 
+            margin: 60px auto; 
+            padding: 0 10px;
+        }
+
+        
+        #mask {
+            width: 100%;
+            aspect-ratio: 1 / 1; 
+            background: rgb(5,5,5);
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        
+        #box {
+            display: flex;
+            width: max-content; 
+            height: 100%;
+            transition: transform 0.2s ease-out; 
+        }
+
+        
+        .pic {
+            width: calc(450px - 20px); 
+            height: 100%;             
+            object-fit: cover;        
+            cursor: pointer;
+            display: block;
+            flex-shrink: 0;         
+        }
+
+        
+        #slider {
+            width: 100%;
+            margin-top: 30px; 
+            display: block;
+            cursor: pointer;
+        }
+
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.4rem; 
+            }
+            .container {
+                margin: 40px auto; 
+            }
+            
+            
+            .pic {
+                width: calc(100vw - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Creating a Responsive Image Slider</h1>
+    </header>
+
+    <div class="container">
+        <div id="mask">
+            <div id="box">
+                <img src="https://picsum.photos/500/500?random=1" class="pic" alt="img1">
+                <img src="https://picsum.photos/500/500?random=2" class="pic" alt="img2">
+                <img src="https://picsum.photos/500/500?random=3" class="pic" alt="img3">
+                <img src="https://picsum.photos/500/500?random=4" class="pic" alt="img4">
+                <img src="https://picsum.photos/500/500?random=5" class="pic" alt="img5">
+                <img src="https://picsum.photos/500/500?random=6" class="pic" alt="img6">
+                <img src="https://picsum.photos/500/500?random=7" class="pic" alt="img7">
+            </div>
+        </div>
+
+        <input type="range" min="0" max="100" value="0" id="slider" oninput="move()">
+    </div>
+        
+    <script>
+        function move() {
+            var slider = document.getElementById("slider");
+            var box = document.getElementById("box");
+            var mask = document.getElementById("mask");
+
+            var maxScroll = box.scrollWidth - mask.clientWidth;
+
+            if(maxScroll <= 0) {
+                box.style.transform = "translateX(0px)";
+                return;
+            }
+
+            var scrollValue = (slider.value / 100) * maxScroll;
+
+            box.style.transform = "translateX(-" + scrollValue + "px)";
+        }
+
+        window.addEventListener('resize', move);
+    </script>
+
+</body>
+</html>
