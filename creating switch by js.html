@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Switch by JavaScript</title>
+    <style>
+       body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f4f4f4; 
+        }
+
+        header {
+            width: 100%;
+            background-color: #333;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(24px, 6vw, 40px);
+            margin: 0;
+            color: #f8f3f3;
+        }
+
+        .image-wrapper {
+            width: 90%;
+            max-width: 700px; 
+            aspect-ratio: 16 / 9; 
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden; 
+            background-color: #ddd; 
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover; 
+        }
+
+        
+        @media (max-width: 600px) {
+            header { padding: 15px 0; }
+            .image-wrapper { width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="m">Image Of The</h1>
+    </header>
+
+    <div class="image-wrapper">
+        <img id="pic" src="" alt="Daily Image">
+    </div>
+
+    <script>
+        var d = new Date();
+        var m = document.getElementById("m");
+        var pic = document.getElementById("pic");
+        var today = d.getDay();
+
+        switch(today) {
+            case 0:
+                m.innerHTML = "Image Of The Sunday";
+                pic.src = "Images/p55.jpg";
+                break;
+            case 1:
+                m.innerHTML = "Image Of The Monday";
+                pic.src = "Images/p53.gif";
+                break;
+            case 2:
+                m.innerHTML = "Image Of The Tuesday";
+                pic.src = "Images/p54.gif";
+                break;
+            case 3:
+                m.innerHTML = "Image Of The Wednesday";
+                pic.src = "Images/p45.jpg";
+                break;
+            case 4:
+                m.innerHTML = "Image Of The Thursday";
+                pic.src = "Images/p5.jpg";
+                break;
+            case 5:
+                m.innerHTML = "Image Of The Friday";
+                pic.src = "Images/p30.png";
+                break;
+            case 6:
+                m.innerHTML = "Image Of The Saturday";
+                pic.src = "Images/p6.jpg";
+                break;
+        }
+
+        document.title = "Ready";
+    </script>
+</body>
+</html>
