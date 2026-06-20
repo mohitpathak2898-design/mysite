@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creating Running Banner By Java Script</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+    text-align:center;
+}
+
+header{
+    background:#070707;
+    color:white;
+    padding:20px;
+    font-size:30px;
+    font-weight:bold;
+    letter-spacing:2px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+
+.banner{
+    position:relative;
+    width: 90%;          
+    max-width: 600px;    
+    aspect-ratio: 4/3;   
+    margin: 40px auto;
+}
+
+.pic{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    border-radius:20px;
+    object-fit:cover;
+    transition:2s;
+    box-shadow:0px 5px 20px rgba(0,0,0,0.3);
+}
+
+@media(max-width:600px){
+    header{
+        font-size:20px;
+        padding:15px;
+    }
+    .banner{
+        height: 300px; 
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>Creating Running Banner By Java Script</header>
+
+<div class="banner">
+    <img src="Images/p59.jpg" class="pic">
+    <img src="Images/p60.jpg" class="pic">
+    <img src="Images/p57.jpg" class="pic">
+    <img src="Images/p58.jpg" class="pic">
+</div>
+
+<script>
+var plist = document.getElementsByTagName("img");
+
+var p59 = plist[3];
+var p60 = plist[2];
+var p57 = plist[1];
+var p58 = plist[0];
+
+var c = 0;
+
+function runbanner()
+{
+    switch(c)
+    {
+        case 0:
+            p59.style.opacity = "0";
+            break;
+
+        case 1:
+            p60.style.opacity = "0";
+            break;
+
+        case 2:
+            p57.style.opacity = "0";
+            break;
+
+        case 3:
+            p58.style.opacity = "0";
+            break;
+
+        case 4:
+            p59.style.opacity = "1";
+            p60.style.opacity = "1";
+            p57.style.opacity = "1";
+            p58.style.opacity = "1";
+            c = -1;
+            break;
+    }
+
+    c++;
+
+    setTimeout(runbanner,2000);
+}
+
+runbanner();
+</script>
+</body>
+</html>
