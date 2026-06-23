@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Menu By JS</title>
+</head>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+background-color:#f5f7fb;
+color:#333;
+}
+
+
+header{
+    background:black;
+    color:white;
+    margin-bottom: 30px;
+    text-align:center;
+    padding:20px;
+    font-size:30px;
+    letter-spacing:2px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+#nav
+    {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        margin-top: 40px;
+    }
+
+    button{
+        background: white;
+        color: Black;
+        border: none;
+        padding: 15px 28px;
+        border-radius: 15px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
+        transition: 0.4;
+    }
+
+    button:hover{
+        transform: translateY(-3px);
+        background: blue;
+        color:white;
+    }
+
+    #m,#m2, #m3{
+        width: 180px;
+        margin-top: 10px;
+        background: white;
+        padding: 0%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+    }
+
+    li{
+        list-style-type: none;
+    }
+
+    li a{
+        display: block;
+        text-decoration: none;
+        color: #0b1d3a;
+        padding: 15px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    li a:hover{
+        background: blue;
+        color: white;
+        padding-left: 25px;
+    }
+
+    .toggle{
+        display: none;
+    }
+
+
+
+
+@media (max-width: 600px){
+
+    header{
+        font-size:20px;
+        padding:15px;
+    }
+
+    #nav{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    button{
+        width:180px;
+        font-size: 18px;
+        padding: 12px;
+    }
+
+    #m, #m2, #m3{
+        width:180px;
+    }
+
+   
+}
+
+
+</style>
+
+<body>
+    
+<header>Creating Interactive Menu Toggle by JavaScript</header>
+
+<div id="nav">
+
+<div>
+    <button onclick="show_hide_menu(event)" id="menu1">
+        Main
+    </button>
+
+<ol id="m" class="toggle">
+    <li><a href="index.html">Profile</a></li>
+    <li><a href="all practice work.html">Practice</a></li>
+    <li><a href="project.html">Project</a></li>
+</ol>
+</div>
+
+<div>
+    <button onclick="show_hide_menu(event)" id="menu2">
+       Project
+    </button>
+
+<ol id="m2" class="toggle">
+     <li><a href="https://www.behance.net/mohitpathak16">Behance</a></li>
+    <li><a href="https://www.figma.com/make/?gclsrc=aw.ds&&utm_source=google&utm_medium=cpc&utm_campaign=22570738050&utm_term=figma&utm_content=753197128699&utm_adgroup=182267200240&gad_source=1&gad_campaignid=22570738050&gbraid=0AAAAACTf0kOt11OLF5wI29Kego1QeZxs1&gclid=CjwKCAjw3ejRBhAdEiwADkqPn9j3a3mU5kKF4nITGal6uh_xfPkisf43rUCF4FUu46P0W32rUZMblBoCs2EQAvD_BwE">Figma</a></li>
+    <li><a href="project.html">Project</a></li>
+</ol>
+</div>
+
+<div>
+    <button onclick="show_hide_menu(event)" id="menu3">
+        Social Media
+    </button>
+
+<ol id="m3" class="toggle">
+    <li><a href="https://www.youtube.com">YouTube</a></li>
+    <li><a href="https://www.instagram.com">Instagram</a></li>
+    <li><a href="https://www.facebook.com">Facebook</a></li>
+</ol>
+</div>
+</div>
+
+<script>
+    var menu_visible = false;
+    var m1 = document.getElementById("m");
+
+    function show_hide_menu(event)
+    {
+        //alert(event.target.id)
+        var mid= event.target.id
+        m1.classList.add("toggle");
+        m2.classList.add("toggle");
+        m3.classList.add("toggle");
+
+        switch(mid)
+        {
+            case "menu1":
+            m1.classList.remove("toggle");
+            document.title = "Menu1"
+            break;
+
+            case"menu2":
+            m2.classList.remove("toggle");
+            document.title="Menu2"
+            break;
+
+            case "menu3":
+            m3.classList.remove("toggle");
+            document.title="Menu3"
+            break;
+        }
+     }
+
+     window.onclick = function(event)
+     {
+        //alert(event.target)
+        if((event.target == "[object HTMLHtmlElement]")||(event.target == "[object HTMLUnknownElement]"))
+     {
+        m1.classList.add("toggle");
+        m2.classList.add("toggle");
+        m3.classList.add("toggle");
+     }
+     }
+
+</script>
+</body>
+</html>
