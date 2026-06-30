@@ -54,6 +54,39 @@ header{
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="black" stroke-width="2"/></svg>') 10 10, auto;
 }
 
+    .controls{
+    width:90%;
+    max-width:900px;
+    margin:25px auto;
+    background:white;
+    border-radius:15px;
+    padding:20px;
+    box-shadow:0px 5px 15px rgba(0,0,0,.2);
+}
+
+.controls h2{
+    text-align:center;
+    color:#0b1d3a;
+    margin-bottom:15px;
+}
+
+.controls table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.controls th{
+    background:#0b1d3a;
+    color:white;
+    padding:12px;
+}
+
+.controls td{
+    border:1px solid #ddd;
+    padding:12px;
+    text-align:center;
+}
+
 
 @media (max-width: 600px){
 
@@ -70,6 +103,21 @@ header{
         border-radius:12px;
     }
 
+    .controls{
+    width:95%;
+    padding:15px;
+}
+
+.controls h2{
+    font-size:20px;
+}
+
+.controls th,
+.controls td{
+    font-size:14px;
+    padding:8px;
+}
+
 }
 </style>
 
@@ -77,6 +125,46 @@ header{
     <header>Creating Keyboard Activity By Java Script</header>
 
     <canvas id="mycan" style="background: rgb(255, 255, 255);" width="600" height="600"></canvas>
+
+    <div class="controls">
+
+<h2>Keyboard Controls</h2>
+
+<table>
+
+<tr>
+<th>Key</th>
+<th>Action</th>
+</tr>
+
+<tr>
+<td>I</td>
+<td>Increase Circle Size</td>
+</tr>
+
+<tr>
+<td>D</td>
+<td>Decrease Circle Size</td>
+</tr>
+
+<tr>
+<td>C</td>
+<td>Clear Canvas</td>
+</tr>
+
+<tr>
+<td>Mouse Click</td>
+<td>Start / Stop Drawing</td>
+</tr>
+
+<tr>
+<td>Mouse Move</td>
+<td>Draw Random Color Circles</td>
+</tr>
+
+</table>
+
+</div>
 
     <script>
         var c = document.getElementById("mycan");
