@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #f5f7fb;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        header {
+            background: #070707;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .palette {
+            width: 90%;
+            max-width: 1000px; 
+            margin: 10px auto;
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, .2);
+            text-align: center;
+        }
+
+        .palette h2 {
+            color: #0b62ee;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        #pickcolor {
+            width: 80px;
+            height: 40px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            background: none;
+        }
+        
+        .canvas-container {
+            width: 90%;
+            max-width: 1000px; 
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        #mycan {
+            display: block;
+            width: 100%;
+            height: 60vh; 
+            border: 4px solid #0b1d3a;
+            border-radius: 10px;
+            cursor: crosshair;
+            background: white;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, .1);
+        }
+        
+        .controls {
+            width: 90%;
+            max-width: 1000px; 
+            margin: 10px auto 30px;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, .2);
+        }
+
+        .controls h2 {
+            text-align: center;
+            color: #0a0a0a;
+            margin-bottom: 15px;
+        }
+
+        .controls table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .controls th {
+            background: #0f69fa;
+            color: white;
+            padding: 12px;
+        }
+
+        .controls td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+            margin-top: auto;
+            color: white;
+            background: #0b1d3a;
+            text-align: center;
+            padding: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                font-size: 24px;
+                padding: 15px;
+            }
+
+            #mycan {
+                height: 50vh;
+            }
+
+            .palette h2, .controls h2 {
+                font-size: 20px;
+            }
+
+            .controls th, .controls td {
+                font-size: 14px;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                font-size: 20px;
+            }
+
+            #mycan {
+                height: 45vh;
+            }
+
+            .controls th, .controls td {
+                font-size: 13px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>Creating Keyboard Activity (Line) By Java Script</header>
+
+    <div class="palette">
+        <h2>Choose Drawing Color</h2>
+        <input type="color" id="pickcolor" value="#000000">
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="mycan"></canvas>
+    </div>
+
+    <div class="controls">
+        <h2>Keyboard Controls</h2>
+        <table>
+            <tr>
+                <th>Key</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>I</td>
+                <td>Increase Line Size</td>
+            </tr>
+            <tr>
+                <td>D</td>
+                <td>Decrease Line Size</td>
+            </tr>
+            <tr>
+                <td>C</td>
+                <td>Clear Canvas</td>
+            </tr>
+            <tr>
+                <td>Mouse Click</td>
+                <td>Start / Stop Drawing</td>
+            </tr>
+            <tr>
+                <td>Mouse Move</td>
+                <td>Draw Lines</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var c = document.getElementById("mycan");
+        var picker = document.getElementById("pickcolor");
+        var k;
+        
+        var r = 2
+        var d = c.getContext("2d");
+        
+        
+        c.width = c.offsetWidth;
+        c.height = c.offsetHeight;
+        
+        //var red,green,blue,drawcolor
+        var drawmode = false
+
+        function f1(event)
+        {
+            k = event.key.toUpperCase(); 
+            
+            switch(k)
+            {
+                case "I":
+                    if(r<100)
+                    {
+                        r=r+1
+                        document.title = r
+                    }
+                    break;
+                case "D":
+                    
+                    if(r>1)
+                    {
+                        r=r-1
+                        document.title = r
+                    }
+                    break;
+                case "C":
+                    d.clearRect(0,0,c.width,c.height);
+                    break;    
+            }
+        }
+
+        function draw(event)
+        {
+            if(drawmode==false)
+            {
+                return;
+            }
+
+            
+            var x = event.offsetX;
+            var y = event.offsetY;
+
+            d.beginPath();
+            d.moveTo(x,y);
+            d.lineTo(Math.random()*1200,Math.random()*1200);
+            
+            
+            d.strokeStyle = picker.value;
+            d.lineWidth = r; 
+            
+            d.stroke(); 
+            
+        }
+
+        function f2()
+        {
+            drawmode = (!drawmode)?true:false
+            
+        }
+
+        document.addEventListener("keydown",f1)
+        c.addEventListener("click",f2)
+        c.addEventListener("mousemove",draw)
+
+    </script>
+</body>
+</html>
