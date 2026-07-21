@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    background-color: #f5f7fb;
+    cursor: pointer;
+}
+
+/* Header */
+header {
+    background: #0c0c0c;
+    color: white;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 30px auto;
+    width: 95%;
+    max-width: 1200px;
+    /* Height hata di hai taki responsive hone par images aasaani se wrap ho sakein */
+}
+
+img {
+    width: 450px; /* Image ka size bada kar diya hai */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,.2);
+    transition: 0.5s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    font-size: 18px;
+    background: #0c0c0c;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.4s; /* Transition time ko thoda fast aur smooth kiya */
+}
+
+button:hover {
+    background: #0056b3; /* Blue color thoda professional rakha hai */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0px;
+    color: #050505;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 0px;
+    color: #080808;
+}
+
+.text {
+    width: 85%;
+    max-width: 1000px;
+    margin: 25px auto;
+    line-height: 1.6;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,.15);
+    text-align: justify;
+}
+
+/* Tablet ke liye Responsive Code */
+@media (max-width: 992px) {
+    img {
+        width: 45%;
+        height: auto;
+        aspect-ratio: 4/3;
+    }
+}
+
+/* Mobile ke liye Responsive Code */
+@media (max-width: 600px) {
+    header {
+        font-size: 22px;
+        padding: 15px;
+    }
+
+    .gallery {
+        gap: 20px;
+        margin: 20px auto;
+    }
+
+    img {
+        width: 95%;
+        height: auto;
+    }
+
+    button {
+        width: 90%;
+        font-size: 16px;
+    }
+
+    .text {
+        width: 94%;
+        padding: 15px;
+        font-size: 15px;
+    }
+}
+</style>
+</head>
+
+<body>
+<header>Introduction to jQuery</header>
+
+<div class="gallery">
+    <img src="Images/p63.png" alt="jQuery Image 1">
+    <img src="Images/p62.png" alt="jQuery Image 2">
+</div>
+
+<button id="b1">Show/Hide (m1)</button>
+<h1 id="my">Introduction to jQuery</h1>
+<h2>About jQuery</h2>
+
+<p class="text">
+    jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.
+
+    jQuery is designed to change the way that you write JavaScript. It was released in January 2006 at BarCamp NYC by John Resig. jQuery is free, open-source software licensed under the MIT License. It is currently maintained by a team of developers led by Timmy Willison.
+
+    jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. 
+</p>
+
+<p class="text">
+    
+    
+    jQuery is a strictly client-side technology, and it is not a programming language. It is a library of JavaScript functions that can be used to perform common tasks in web development. jQuery is designed to be easy to use and to work across different browsers, making it a popular choice for web developers.
+    
+    jQuery is front-end technology, which means that it is used to create the user interface and interactivity of a website. It can be used to create dynamic effects, such as animations and transitions, and to handle user input, such as form validation and event handling.
+</p>
+
+<p class="text">
+    The purpose of jQuery is to simplify the process of writing JavaScript code for web development. It provides a set of functions and methods that can be used to manipulate HTML elements, handle events, and create animations and effects. jQuery also provides a simple syntax for making AJAX requests, which allows developers to retrieve data from a server without having to reload the entire page.
+       
+    jQuery is a lightweight library that is designed to be easy to use and to work across different browsers. It is widely used in web development and has a large community of developers who contribute to its development and maintenance.
+     
+    jQuery takes a lot of the complexity out of JavaScript programming, making it easier for developers to create dynamic and interactive web applications. It is a powerful tool that can be used to enhance the user experience of a website and to create engaging and interactive web pages.
+</p>
+
+<script>
+    $(document).ready(function() {
+        
+        $("#b1").click(function(){
+            $("#my").animate({
+                height: 'toggle',
+                opacity: 'toggle'
+            }, 600);
+        });
+
+        
+        $(".text").mouseenter(function(){
+            $(this).css({
+                "transition": "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)", 
+                "transform": "scale(1.02)",
+                "background": "cyan", 
+                "color": "#0b1d3a",
+                "box-shadow": "0px 12px 20px rgba(0,0,0,0.2)"
+            });
+        });
+
+        $(".text").mouseleave(function(){
+            $(this).css({
+                "transition": "all 0.4s ease",
+                "transform": "scale(1)",
+                "background": "#ffffff",
+                "color": "#000000",
+                "box-shadow": "0px 5px 15px rgba(0,0,0,.15)"
+            });
+        });
+    });
+</script>
+</body>
+</html>
