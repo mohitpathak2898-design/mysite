@@ -7,78 +7,137 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
     <style>
         * {
-            margin: 0%;
-            padding: 0%;
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
             background: linear-gradient(135deg, #1f1c2c, #928dab);
-            padding: 20px;
             background-repeat: no-repeat;
             background-size: cover;
             background-attachment: fixed;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
         }
 
+        
+        .top-header {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .top-header h2 {
+            font-size: 24px;
+            color: #faf9f9;
+        }
+
+        
         .container {
-            width: 80%;
-            margin: auto;
+            width: 90%;
+            max-width: 1000px;
             background: #ffffff;
             border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.6);
             overflow: hidden;
+            margin-bottom: 40px;
         }
 
         h1 {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             background: #111;
             color: #e50914; 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
         }
 
         .box {
-            margin: 15px;
+            margin: 15px 20px;
         }
 
         .head {
             background: #333333;
             color: #ffffff;
-            padding: 18px;
+            padding: 18px 25px;
             font-size: 22px;
+            font-weight: 600;
             cursor: pointer;
             border-radius: 10px;
             margin-bottom: 5px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .head:hover {
             background: #e50914; 
             color: white;
+            transform: translateY(-2px); 
         }
 
+        
         .content {
-            padding: 20px;
             display: none;
+            border-radius: 10px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        .content-inner {
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .content-inner p {
+            flex: 1;
             font-size: 18px;
-            line-height: 30px;
-            border-radius: 10px;
+            line-height: 1.8;
+            text-align: justify;
         }
 
         
-        img {
-            width: 100%;
-            max-width: 600px; 
+        .content-inner img {
+            width: 300px;
             height: auto;
-            display: block;
-            margin: 15px auto 0 auto; 
-            border-radius: 10px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: transform 0.4s ease; 
+        }
+
+        .content-inner img:hover {
+            transform: scale(1.05) rotate(2deg); 
         }
 
         
+        
+        
+        @media (max-width: 992px) {
+            .content-inner {
+                gap: 20px;
+            }
+            .content-inner img {
+                width: 250px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .top-header h2 {
+                font-size: 18px;
+            }
+
             .container {
                 width: 95%;
             }
@@ -88,51 +147,80 @@
                 padding: 15px;
             }
 
-            .content {
+            
+            .content-inner {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+
+            .content-inner p {
+                text-align: center;
                 font-size: 16px;
-                line-height: 26px;
+                line-height: 1.6;
+            }
+
+            .content-inner img {
+                width: 100%;
+                max-width: 450px;
+                margin-top: 15px;
             }
         }
     </style>
 </head>
 
 <body>
+    
+    <div class="top-header">
+        <h2>creating accordion menu by jq query</h2>
+    </div>
+
+    
     <div class="container">
-        <h1>Global Mega-Hit Series (Sci-Fi & Thriller)</h1>
+        <h1>Global Mega-Hit Series</h1>
         
         <div class="box">
             <div class="head" id="head1">Stranger Things</div>
             <div class="content" id="content1">
-                <p>Stranger Things is a science fiction horror series set in the 1980s. It follows a group of kids in Hawkins, Indiana, as they encounter supernatural forces and government conspiracies while searching for their missing friend. The show combines nostalgia, suspense, and supernatural elements, making it a global phenomenon.</p>
-                <img src="Images/p64.jpg" alt="Stranger Things">
+                <div class="content-inner">
+                    <p>Stranger Things is a science fiction horror series set in the 1980s. It follows a group of kids in Hawkins, Indiana, as they encounter supernatural forces and government conspiracies while searching for their missing friend. The show combines nostalgia, suspense, and supernatural elements, making it a global phenomenon.</p>
+                    <img src="Images/p64.jpg" alt="Stranger Things">
+                </div>
             </div>
         </div>
 
         <div class="box">
             <div class="head" id="head2">Money Heist</div>
             <div class="content" id="content2">
-                <p>Money Heist (La Casa de Papel) is a Spanish heist crime drama series that follows a group of robbers who plan and execute meticulously planned heists on the Royal Mint of Spain and the Bank of Spain. Led by the enigmatic "Professor," the series explores themes of resistance, love, and betrayal, captivating audiences worldwide.</p>
-                <img src="Images/p65.jpg" alt="Money Heist">
+                <div class="content-inner">
+                    <p>Money Heist (La Casa de Papel) is a Spanish heist crime drama series that follows a group of robbers who plan and execute meticulously planned heists on the Royal Mint of Spain and the Bank of Spain. Led by the enigmatic "Professor," the series explores themes of resistance, love, and betrayal, captivating audiences worldwide.</p>
+                    <img src="Images/p65.jpg" alt="Money Heist">
+                </div>
             </div>
         </div>
 
         <div class="box">
             <div class="head" id="head3">Wednesday</div>
             <div class="content" id="content3">
-                <p>Wednesday is a dark comedy series that follows the adventures of Wednesday Addams, the daughter of the famous Addams family. Set in a world where supernatural elements are commonplace, the series explores themes of identity, belonging, and the complexities of family relationships.</p>
-                <img src="Images/p66.jpg" alt="Wednesday">
+                <div class="content-inner">
+                    <p>Wednesday is a dark comedy series that follows the adventures of Wednesday Addams, the daughter of the famous Addams family. Set in a world where supernatural elements are commonplace, the series explores themes of identity, belonging, and the complexities of family relationships.</p>
+                    <img src="Images/p66.jpg" alt="Wednesday">
+                </div>
             </div>
         </div>
 
         <div class="box">
             <div class="head" id="head4">Squid Games</div>
             <div class="content" id="content4">
-                <p>Squid Game is a South Korean survival drama series that revolves around a deadly competition where participants, facing financial hardships, compete in a series of children's games for a chance to win a massive cash prize. The show explores themes of desperation, morality, and the human condition.</p>
-                <img src="Images/p67.jpg" alt="Squid Games">
+                <div class="content-inner">
+                    <p>Squid Game is a South Korean survival drama series that revolves around a deadly competition where participants, facing financial hardships, compete in a series of children's games for a chance to win a massive cash prize. The show explores themes of desperation, morality, and the human condition.</p>
+                    <img src="Images/p67.jpg" alt="Squid Games">
+                </div>
             </div>
         </div>
     </div>
 
+    
     <script>
         $("#content1").hide();
         $("#content2").hide();
@@ -160,7 +248,7 @@
                 
                 $("#content2").slideToggle(500);
 
-                $("#content2").css({"background":"#0b1d3a","color":"white",
+                $("#content2").css({"background":"red","color":"white",
         "width":"100%"});
             });
 
@@ -184,7 +272,7 @@
                 
                 $("#content4").slideToggle(500);
 
-                $("#content4").css({"background":"green","color":"white",
+                $("#content4").css({"background":"cyan","color":"black",
         "width":"100%"});
             });
 
