@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Gallery</title>
+    
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+        }
+
+        
+        #header {
+            width: 100%;
+            padding: 40px 20px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            text-align: center;
+        }
+
+        #header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-transform: capitalize;
+            cursor: pointer;
+        }
+
+        #header p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 50px 5%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px 20px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover; 
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .card .info {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            #header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function(){
+            
+            
+            $("p:not(.info)").mouseover(function(){
+                $(this).addClass("animate__animated animate__flash");
+            });
+            $("p:not(.info)").mouseout(function(){
+                $(this).removeClass("animate__animated animate__flash");
+            });
+
+            
+            $("h1").mouseover(function(){
+                $(this).addClass("animate__animated animate__zoomInUp");
+            });
+            $("h1").mouseout(function(){
+                $(this).removeClass("animate__animated animate__zoomInUp");
+            });
+
+            
+            $("h2").mouseover(function(){
+                $(this).addClass("animate__animated animate__tada");
+            });
+            $("h2").mouseout(function(){
+                $(this).removeClass("animate__animated animate__tada");
+            });
+
+            
+            $("img").mouseover(function(){
+                
+                $(this).css({"transform":"scale(1.05)","transition":"0.5s"});
+                $(this).addClass("animate__animated animate__pulse"); 
+            });
+
+            
+            $("img").mouseout(function(){
+                $(this).css({"transform":"scale(1)","transition":"0.5s"});
+                $(this).removeClass("animate__animated animate__pulse");
+            });
+        });
+    </script>
+
+    
+    <div id="header">
+        <h1>creating add class remove class and toggle class by j query</h1>
+        <p>(Hover over this text or the title above to see jQuery animations!)</p>
+    </div>
+
+    
+    <div class="card-container">
+        
+        
+        <div class="card">
+            <h2>Kedarnath Temple</h2>
+            <img src="Images/p68.jpg" alt="Temple 1">
+            <p class="info">Located in the Himalayas, this is one of the most sacred temples dedicated to Lord Shiva.</p>
+        </div>
+
+        
+        <div class="card">
+            <h2>Badrinath Temple</h2>
+            <img src="Images/p70.jpg" alt="Temple 2">
+            <p class="info">A Hindu temple dedicated to Lord Vishnu, situated in the town of Chamoli in Uttarakhand.</p>
+        </div>
+
+        
+        <div class="card">
+            <h2>Dhari Devi Temple</h2>
+            <img src="Images/p69.jpg" alt="Temple 3">
+            <p class="info">Dhari Devi Temple is a revered Hindu temple dedicated to Goddess Durga, located in the heart of the city.</p>
+        </div>
+
+        
+        <div class="card">
+            <h2>Neem Karoli Temple</h2>
+            <img src="Images/p59.jpg" alt="Temple 4">
+            <p class="info">A revered temple dedicated to Saint Neem Karoli, known for his devotion and spiritual teachings.</p>
+        </div>
+
+        <div class="card">
+            <h2>Jageshwar Temple</h2>
+            <img src="Images/p71.jpg" alt="Temple 4">
+            <p class="info">A revered temple dedicated to Lord Shiva, located in the town of Almora in Uttarakhand.</p>
+        </div>
+
+        <div class="card">
+            <h2>Golu Devta Temple</h2>
+            <img src="Images/p72.jpg" alt="Temple 4">
+            <p class="info">A revered temple dedicated to Lord Golu Devta, located in the town of Almora in Uttarakhand.</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
