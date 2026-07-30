@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Fade Functions By J Query</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9; 
+        }
+
+        
+        .top-header {
+            width: 100%;
+            background-color: #0f0f0f;
+            padding: 10px 20px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+
+        .top-header h1 {
+            color: #fafafa;
+            margin-bottom: 5px; 
+            font-size: clamp(18px, 4vw, 26px); 
+        }
+
+        .top-header p {
+            color: #ccc;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        
+        .image-box {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
+            margin-bottom: 30px; 
+            width: 90%;
+            max-width: 450px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+
+        .image-box:hover {
+            cursor: pointer; 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
+        }
+
+        #image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        
+        .buttons-container {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            flex: 1 1 auto; 
+            min-width: 120px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        
+        @media (max-width: 480px) {
+            .buttons-container {
+                flex-direction: column; 
+                padding: 0 10px;
+            }
+            button {
+                width: 100%; 
+            }
+            .image-box {
+                width: 95%; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header class="top-header">
+        <h1>Creating Fade Functions By J Query</h1>
+        <p>Click the buttons below to see the fade effects on the image.</p>
+    </header>
+
+    
+    <div class="main-container">
+        
+        
+        <div class="image-box">
+            <img id="image" src="Images/p58.jpg" alt="Image">
+        </div>
+        
+        
+        <div class="buttons-container">
+            <button id="fadeInBtn">Fade In</button>
+            <button id="fadeOutBtn">Fade Out</button>
+            <button id="fadeToBtn">Fade To 50%</button>
+        </div>
+
+    </div>
+
+    
+    <script>
+        $(document).ready(function() {
+            $("#fadeInBtn").click(function() {
+                $("#image").fadeIn();
+            });
+
+            $("#fadeOutBtn").click(function() {
+                $("#image").fadeOut();
+            });
+
+            $("#fadeToBtn").click(function() {
+                $("#image").fadeTo(1000, 0.5);
+            });
+        });
+    </script>
+</body>
+</html>
