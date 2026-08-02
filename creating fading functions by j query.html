@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creating Fade Functions By J Query</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0/jquery.min.js"></script>
+    <title>Creating Fade Functions By jQuery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     
     <style>
         * {
@@ -17,20 +17,20 @@
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #f9f9f9; 
+            line-height: 1.6;
         }
 
-        
         .top-header {
             width: 100%;
             background-color: #0f0f0f;
-            padding: 10px 20px; 
+            padding: 15px 20px; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
         }
 
         .top-header h1 {
             color: #fafafa;
             margin-bottom: 5px; 
-            font-size: clamp(18px, 4vw, 26px); 
+            font-size: clamp(20px, 4vw, 28px); 
         }
 
         .top-header p {
@@ -47,39 +47,63 @@
         }
 
         
-        .image-box {
+        .content-box {
             background-color: #fff;
-            padding: 15px;
+            padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); 
             margin-bottom: 30px; 
-            width: 90%;
-            max-width: 450px; 
+            width: 95%;
+            max-width: 600px; 
             transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            text-align: left; 
         }
 
-        .image-box:hover {
-            cursor: pointer; 
-            transform: translateY(-8px); 
+        .content-box:hover {
+            transform: translateY(-5px); 
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25); 
         }
 
-        #image {
+        
+        #info-content {
             width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-            display: block;
         }
 
-        
+        #info-content h2 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: clamp(18px, 3vw, 22px);
+            text-align: center;
+        }
+
+        #info-content p {
+            color: #555;
+            margin-bottom: 10px;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        #info-content ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            color: #444;
+        }
+
+        #info-content li {
+            margin-bottom: 8px;
+            font-size: clamp(14px, 2vw, 16px);
+        }
+
+        #info-content strong {
+            color: #007BFF;
+        }
+
         .buttons-container {
             display: flex;
             flex-wrap: wrap; 
             justify-content: center;
             gap: 15px;
             width: 100%;
-            max-width: 500px;
+            max-width: 600px;
         }
 
         button {
@@ -108,26 +132,32 @@
             button {
                 width: 100%; 
             }
-            .image-box {
-                width: 95%; 
+            .content-box {
+                padding: 20px 15px;
             }
         }
     </style>
 </head>
 <body>
 
-    
     <header class="top-header">
-        <h1>Creating Fade Functions By J Query</h1>
-        <p>Click the buttons below to see the fade effects on the image.</p>
+        <h1>Creating Fade Functions By jQuery</h1>
+        <p>Click the buttons below to see the fade effects on the information box.</p>
     </header>
 
-    
     <div class="main-container">
         
-        
-        <div class="image-box">
-            <img id="image" src="Images/p58.jpg" alt="Image">
+    
+        <div class="content-box">
+            <div id="info-content">
+                <h2>jQuery Fading Methods</h2>
+                <p>jQuery provides powerful methods to add beautiful fading animations to HTML elements. Here is how they work:</p>
+                <ul>
+                    <li><strong>fadeIn():</strong> This method gradually changes the opacity of a hidden element to make it completely visible.</li>
+                    <li><strong>fadeOut():</strong> This method gradually decreases the opacity of a visible element until it becomes completely hidden.</li>
+                    <li><strong>fadeTo():</strong> This method allows you to smoothly fade an element to a specific opacity level. For example, fading to 50% makes it semi-transparent.</li>
+                </ul>
+            </div>
         </div>
         
         
@@ -139,19 +169,21 @@
 
     </div>
 
-    
     <script>
         $(document).ready(function() {
+            
             $("#fadeInBtn").click(function() {
-                $("#image").fadeIn();
+                $("#info-content").fadeIn(500); 
             });
 
+            
             $("#fadeOutBtn").click(function() {
-                $("#image").fadeOut();
+                $("#info-content").fadeOut(500);
             });
 
+            
             $("#fadeToBtn").click(function() {
-                $("#image").fadeTo(1000, 0.5);
+                $("#info-content").fadeTo(1000, 0.5);
             });
         });
     </script>
