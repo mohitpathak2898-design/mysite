@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating UI Effects with jQuery</title>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    
+    <style>
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; 
+            padding-top: 80px; 
+            display: flex;
+            justify-content: center;
+        }
+
+        
+        .top-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #0a0a0a 0%, #0d0d0e 100%);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .top-header h1 {
+            margin: 0;
+            font-size: 22px;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        
+        .Container {
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        
+        #image {
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+            border-radius: 12px; 
+            padding: 30px;
+            margin: 0 auto 40px auto;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            text-align: justify;
+            color: #444;
+            line-height: 1.8;
+            font-size: 16px;
+            overflow: hidden;
+            box-sizing: border-box;
+            transition: box-shadow 0.3s ease;
+        }
+        
+        #image:hover {
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15); 
+        }
+
+        #image p {
+            margin: 0;
+        }
+
+        
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        
+        button {
+            padding: 12px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            border-radius: 25px; 
+            box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+            transition: all 0.3s ease;
+            flex: 1 1 calc(50% - 15px); 
+            max-width: 180px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #45a049, #3d8b40);
+            box-shadow: 0 6px 12px rgba(76, 175, 80, 0.4);
+            transform: translateY(-2px); 
+        }
+        
+        button:active {
+            transform: translateY(1px); 
+            box-shadow: 0 2px 5px rgba(76, 175, 80, 0.3);
+        }
+
+        
+        @media (min-width: 600px) {
+            button {
+                flex: none; 
+                width: auto;
+            }
+            #image {
+                font-size: 18px; 
+                padding: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    
+    <header class="top-header">
+        <h1>Creating UI Effects with jQuery</h1>
+    </header>
+
+    <div class="Container">
+        
+        <div id="image">
+            <p>
+                <strong>Welcome to jQuery UI Effects!</strong> 
+                jQuery UI provides a powerful and comprehensive set of animation effects and user interface components that extend the basic capabilities of the core jQuery library. By using these tools, developers can easily add visually appealing transitions to web elements, making the interface more dynamic and interactive.
+                <br><br>
+                These effects include fading, sliding, color animations, and state transitions. You can test some of these core effects by clicking the buttons below. Click once to trigger the animation, and click again to restore the container to its original state!
+            </p>
+        </div>
+        
+        
+        <div class="button-group">
+            <button id="blind">Blind</button>
+            <button id="highlight">Highlight</button>
+            <button id="pulsate">Pulsate</button>
+            <button id="fade">Fade</button>
+        </div>
+    </div>
+
+    
+    <script>
+        $(document).ready(function() {
+            
+            
+            $("#blind").click(function() {
+                $("#image").toggle("blind", { direction: "vertical" }, 1000);
+            });
+
+            
+            $("#highlight").click(function() {
+                $("#image").effect("highlight", { color: "#ffff00" }, 1000);
+            });
+
+        
+            $("#pulsate").click(function() {
+                $("#image").effect("pulsate", { times: 3 }, 1000);
+            });
+
+        
+           $("#fade").click(function() {
+                $("#image").fadeToggle(1000); 
+            });
+            
+        });
+    </script>
+</body>
+</html>
