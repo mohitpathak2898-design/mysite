@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <style>
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -20,7 +19,6 @@
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-    
         header {
             width: 100%;
             background-color: black;
@@ -37,6 +35,7 @@
             text-transform: uppercase;
         }
 
+        
         .main-content {
             flex-grow: 1;
             display: flex;
@@ -71,7 +70,6 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-     
         .card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 25px rgba(0,0,0,0.15);
@@ -79,10 +77,9 @@
             color: white;      
         }
 
-
         @media (max-width: 768px) {
             .card {
-                width: 90%; 
+                width: 100%; 
                 max-width: 400px;
             }
             header h1 {
@@ -97,19 +94,17 @@
         <h1>My Projects</h1>
     </header>
 
-   <div class="box-container">
-   
-
     
-    <a href="https://mohitpathak2898-design.github.io/AOTM-Website/" class="card">
-        AOTM Website (May)
-    </a>
+    <div class="main-content">
+        <div class="box-container">
+            <a href="https://mohitpathak2898-design.github.io/AOTM-Website/" class="card">
+                AOTM Website (May)
+            </a>
 
-    <a href="https://mohitpathak2898-design.github.io/AOTM-Website-August-/" class="card">
-        AOTM Website (August)
-    </a> 
-
-</div>
+            <a href="https://mohitpathak2898-design.github.io/AOTM-Website-August-/" class="card">
+                AOTM Website (August)
+            </a> 
+        </div>
     </div>
 
 </body>
