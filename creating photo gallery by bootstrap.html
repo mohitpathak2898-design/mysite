@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<style>
+    :root {
+        --my-color: --bs-info-rgb;
+    }
+    .mystyle {
+        background:var(--my-color);
+        border-radius: 10px;
+    }
+    .photo-size {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    
+    .img-thumbnail {
+        padding: 0 ; 
+        border: 8px solid white; 
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
+        cursor: pointer ;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .img-thumbnail:hover {
+        transform: translateY(-10px); 
+        box-shadow: 0 12px 24px rgba(0,0,0,0.25); 
+    }
+</style>
+<body>
+    <div class="container-fluid shadow-lg text-uppercase text-center mystyle p-4 mb-5">
+        <h1 class="text-primary">Photo Gallery</h1>
+        <p>Creating an amazing Photo Gallery By Bootstrap</p>
+    </div>
+
+    <div>
+    <div class="row">
+
+        <div class="p-4 col-sm-12 col-md-6 col-lg-4">
+        <img src="Images/p78.jpg" alt="Image 1" class="img-thumbnail img-fluid photo-size">
+        </div>
+        
+        <div class="p-4 col-sm-12 col-md-6 col-lg-4">
+        <img src="Images/p79.jpg" alt="Image 2" class="img-thumbnail img-fluid photo-size">
+        </div>
+
+        <div class="p-4 col-sm-12 col-md-6 col-lg-4">
+        <img src="Images/p80.jpg" alt="Image 3" class="img-thumbnail img-fluid photo-size">
+        </div>
+
+        <div class="p-4 col-sm-12 col-md-6 col-lg-4">
+        <img src="Images/p81.jpg" alt="Image 4" class="img-thumbnail img-fluid photo-size">
+        </div>
+
+        <div class="p-4 col-sm-12 col-md-6 col-lg-4">
+        <img src="Images/p82.jpg" alt="Image 5" class="img-thumbnail img-fluid photo-size">
+        </div>
+
+        <div class="p-4 col-sm-12 col-md-6 col-lg-4">
+        <img src="Images/p83.jpg" alt="Image 6" class="img-thumbnail img-fluid photo-size">
+        </div>
+
+        </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
