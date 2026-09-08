@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Dropdown</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <style>
+      .text-orange {
+        color: orange;
+      }
+  
+      .text-purple {
+        color: purple;
+      }
+       
+      .text-decoration-uppercase {
+        text-transform: uppercase;
+      }
+  
+      .text-decoration-lowercase {
+        text-transform: lowercase;
+      }
+  
+      .text-decoration-capitalize {
+        text-transform: capitalize;
+      }
+  
+      .text-decoration-underline {
+        text-decoration: underline;
+      }
+  
+      .badge {
+        font-size: 1rem;
+        display: block; 
+      }
+  
+    
+      .secondary-text-box {
+        min-height: 80px; 
+        display: flex;
+        align-items: center;
+      }
+  
+      .dropdown-menu {
+        max-height: 200px;
+        overflow-y: auto;
+      }
+  
+      .dropdown-item:hover { background-color: #f8f9fa; }
+      .dropdown-item:focus { background-color: #e9ecef; }
+      .dropdown-item:active { background-color: #dee2e6; }
+      .dropdown-item:disabled { color: #6c757d; pointer-events: none; }
+      .dropdown-item:checked { background-color: #007bff; color: #fff; }
+    </style>
+  </head>
+  <body>
+    
+    <div class="container-fluid bg-light text-dark shadow text-center p-3 mb-4">
+      <h1 class="text-capitalize fw-bold fs-1 lh-1">Creating Dropdown Menu By Bootstrap</h1>
+    </div>
+
+    
+    <div class="d-flex justify-content-center mb-5">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle px-4 py-2" type="button" data-bs-toggle="dropdown">
+          Select Technology
+        </button>
+        <ul class="dropdown-menu shadow">
+          <li><a class="dropdown-item" href="#">HTML</a></li>
+          <li><a class="dropdown-item" href="#">CSS</a></li>
+          <li><a class="dropdown-item" href="#">JavaScript</a></li>
+          <li><a class="dropdown-item" href="#">Bootstrap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="container mb-5">
+      <div class="row g-4">
+        
+    
+        <div class="col-lg-3 col-md-6 col-12 d-flex">
+          <div class="d-flex flex-column w-100 p-3">
+            <h2 class="text-primary">HTML</h2>
+            <p class="flex-grow-1">HTML (HyperText Markup Language) is the backbone of web development, providing the core structure and semantic elements needed to build accessible web pages.</p>
+            
+            <div class="secondary-text-box pt-2">
+              <p class="text-decoration-uppercase text-muted small mb-0">Html is the standard markup language for creating web pages and web applications.</p>
+            </div>
+
+            <div class="mt-3 text-center">
+              <span class="badge bg-primary text-light p-2 w-100">HTML</span> 
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="col-lg-3 col-md-6 col-12 d-flex">
+          <div class="d-flex flex-column w-100 p-3">
+            <h2 class="text-orange">CSS</h2>
+            <p class="flex-grow-1">CSS (Cascading Style Sheets) controls the visual presentation, colors, layouts, and responsive design, making web pages visually appealing across all devices.</p>
+            
+            <div class="secondary-text-box pt-2">
+              <p class="text-decoration-lowercase text-muted small mb-0">Css is a stylesheet language that enhances the visual presentation of web content.</p>
+            </div>
+
+            <div class="mt-3 text-center">
+              <span class="badge bg-warning text-dark p-2 w-100">CSS</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6 col-12 d-flex">
+          <div class="d-flex flex-column w-100 p-3">
+            <h2 class="text-success">JavaScript</h2>
+            <p class="flex-grow-1">JavaScript is a powerful scripting language that drives website interactivity, handles dynamic content updates, and brings user interfaces to life.</p>
+            
+            <div class="secondary-text-box pt-2">
+              <p class="text-decoration-line-through text-muted small mb-0">JavaScript is a versatile programming language that enables interactive web experiences.</p>
+            </div>
+
+            <div class="mt-3 text-center">
+              <span class="badge bg-info text-dark p-2 w-100">JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-3 col-md-6 col-12 d-flex">
+          <div class="d-flex flex-column w-100 p-3">
+            <h2 class="text-purple">Bootstrap</h2>
+            <p class="flex-grow-1">Bootstrap is a robust frontend framework packed with pre-built UI components, utility classes, and a flexible grid system for fast, responsive development.</p>
+            
+            <div class="secondary-text-box pt-2">
+              <p class="text-decoration-underline text-muted small mb-0">Bootstrap is a robust frontend framework packed with pre-built UI components, utility classes, and a flexible grid system for fast, responsive development.</p>
+            </div>
+
+            <div class="mt-3 text-center">
+              <span class="badge bg-secondary text-light p-2 w-100">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+ 
+    <!-- Corrected Bootstrap JS Version (5.3.3) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
