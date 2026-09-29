@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Carousel Showcase</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #e3ebf5; 
+            font-family: Arial, sans-serif;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.9));
+            width: 2rem;
+            height: 2rem;
+        }
+
+        .carousel-indicators button {
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.9);
+            opacity: 0.7;
+        }
+        
+        .carousel-indicators .active {
+            opacity: 1;
+        }
+
+        .carousel-box, .carousel-box img {
+            height: 250px; 
+            object-fit: cover;
+            width: 100%;
+        }
+
+    
+        @media (min-width: 768px) {
+            .carousel-box, .carousel-box img {
+                height: 450px; 
+            }
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 3rem;
+                height: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="bg-black text-white text-center py-3 fs-5 fw-bold shadow-sm">
+        Creating carousel banner in bootstrap
+    </div>
+
+    <div class="container my-4 my-md-5">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <div class="carousel-box rounded-4 shadow-lg overflow-hidden">
+
+                    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3"></button>
+                            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4"></button>
+                        </div>
+
+                        <div class="carousel-inner h-100">
+
+                            <div class="carousel-item active h-100">
+                                <img src="Images/p68.jpg" class="d-block w-100" alt="M">
+                            </div>
+
+                            <div class="carousel-item h-100">
+                                <img src="Images/p69.jpg" class="d-block w-100" alt="A">
+                            </div>
+
+                            <div class="carousel-item h-100">
+                                <img src="Images/p70.jpg" class="d-block w-100" alt="A">
+                            </div>
+
+                            <div class="carousel-item h-100">
+                                <img src="Images/p71.jpg" class="d-block w-100" alt="N">
+                            </div>
+
+                            <div class="carousel-item h-100">
+                                <img src="Images/p72.jpg" class="d-block w-100" alt="M">
+                            </div>
+
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        
+                        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
