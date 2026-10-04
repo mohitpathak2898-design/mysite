@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Progress Bars & Tooltip</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            padding-top: 100px; 
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar fixed-top bg-dark navbar-dark shadow-sm py-3">
+        <div class="container-fluid justify-content-center text-center">
+            <span class="navbar-brand mb-0 fs-3 fw-bold text-wrap">Creating Progress Bar and Tooltip in Bootstrap</span>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">Bootstrap Components</h2>
+
+        <div class="mb-4">
+            <h4>1. Percentage Progress Bar</h4>
+            <div class="progress" role="progressbar" aria-label="Example with label" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" style="width: 75%">75%</div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h4>2. Striped Progress Bar</h4>
+            <div class="progress" role="progressbar" aria-label="Striped example" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped" style="width: 60%">60%</div>
+            </div>
+        </div>
+
+        <div class="mb-5">
+            <h4>3. Animated Striped Progress Bar</h4>
+            <div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 85%">85%</div>
+            </div>
+        </div>
+
+
+        <div class="mt-4 mb-5 text-center">
+            <h4 class="mb-4">Bootstrap Tooltip</h4>
+            <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="This is a Bootstrap Tooltip">
+                Hover Me
+            </button>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+</body>
+</html>
